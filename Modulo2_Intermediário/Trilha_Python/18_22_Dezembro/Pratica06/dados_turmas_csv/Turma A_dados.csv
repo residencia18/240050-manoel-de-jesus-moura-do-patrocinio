@@ -1,0 +1,12 @@
+Nome da Turma,Quantidade de Alunos,Nome da Trilha,Dados dos Residentes
+Turma A,20,Python,"                            Nome  Idade                Formacao  ... Tempo_Formado Experiencia_Programacao  Trilha
+ID                                                               ...                                              
+tic18Pyt12390  Manoel Patrocínio     34        Formação técnica  ...          True                   False  Python
+tic18Pyt22200             Rebeca     24  Graduação em andamento  ...         False                   False  Python
+
+[2 rows x 9 columns]"
+Turma A,20,.NET,"                Nome  Idade                                 Formacao  ... Tempo_Formado Experiencia_Programacao  Trilha
+ID                                                                    ...                                              
+tic18.NE33310  Luiza     14  Formação técnica graduação em andamento  ...          True                   False    .NET
+
+[1 rows x 9 columns]"

@@ -1,0 +1,64 @@
+<main>
+
+    <form [formGroup]="SuinoPesoForm" (ngSubmit)="onSubmit(SuinoPesoForm)">
+
+        <h2> Cadastro de peso</h2>
+        <p>Preencha todos os campos </p>
+
+        <div class="row">
+
+            <div class="input-group">
+                <label for="DataPesagem">Data da medição</label>
+                <input type="date" formControlName="DataPesagem" name="DataPesagem">
+                <div *ngIf="SuinoPesoForm.get('DataPesagem')?.invalid &&  SuinoPesoForm.get('DataPesagem')?.touched">
+                    <span class="error_message"> Compo Obrigatório</span>
+                </div>
+            </div>
+
+            <div class="input-group">
+                <label for="suinoPeso">Peso (kg)</label>
+                <input type="number" formControlName="suinoPeso" name="suinoPeso">
+                <div *ngIf="SuinoPesoForm.get('suinoPeso')?.invalid &&  SuinoPesoForm.get('suinoPeso')?.touched">
+                    <span class="error_message"> Compo Obrigatório</span>
+                </div>
+            </div>
+        </div>
+        <button type="submit" [disabled]="SuinoPesoForm.invalid">Cadastrar</button>
+
+    </form>
+
+    <h4  *ngIf="suinopesoHistorico.length == 0">Informe algum registro para visualizar o histórico de pesos desse animal em gráfico e tabela</h4>
+    <div class="chart_container" *ngIf="pesos.length > 0">
+        <h3>Histórico de pesos</h3>
+        <app-line-chart [datas]="datas" [pesos]="pesos"/>
+    </div>
+
+    <section *ngIf="suinopesoHistorico.length > 0">
+      
+        <h3>Tabela de companhamento</h3>
+
+        <table class="tabela">
+            <thead>
+                <tr>
+                    <th>Brinco</th>
+                    <th>Data Do Registro</th>
+                    <th>Preso (kg)</th>
+                    <th>Opção</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let suino of suinopesoHistorico">
+                    <td>{{suino.suinoBrinco}}</td>
+                    <td>{{suino.DataPesagem | formatdate}}</td>
+                    <td>{{suino.suinoPeso}} kg</td>
+                    <td> <a routerLink="/edit-peso/{{suino.id}}"> Editar </a></td>
+                </tr>
+
+
+            </tbody>
+
+        </table>
+    </section>
+
+ 
+</main>

@@ -1,0 +1,11 @@
+<article> 
+    <h3>Alguns projetos públicos</h3>
+    <div class="projects-container">
+      
+            <a *ngFor="let proj of projetos" href={{proj.projectLink}} target="_blank" >
+                
+                {{proj.projectName}}
+            </a>
+    </div>
+
+</article>

@@ -1,0 +1,30 @@
+.container-filters{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 2rem;
+}
+
+.input-group{
+  width: max-content;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+}
+
+.input-group label{
+    font-weight: 500;
+    color: #2b2a2a;
+    margin-bottom: .5rem;
+}
+
+.input-group select{
+    width: 100% ;
+    border: solid 1px #cecece;
+    border-radius: 5px;
+    background: #fff;
+    padding: .5rem;
+}

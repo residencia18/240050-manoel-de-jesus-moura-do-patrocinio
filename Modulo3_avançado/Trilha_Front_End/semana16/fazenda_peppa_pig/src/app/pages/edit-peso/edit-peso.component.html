@@ -1,0 +1,31 @@
+<main>
+
+    <form [formGroup]="SuinoPesoForm" (ngSubmit)="onSubmit(SuinoPesoForm)">
+
+        <h2> Edição de peso</h2>
+        <p>Preencha todos os campos </p>
+
+        <div class="row">
+
+            <div class="input-group">
+                <label for="DataPesagem">Data da medição</label>
+                <input type="date" formControlName="DataPesagem" name="DataPesagem">
+                <div *ngIf="SuinoPesoForm.get('DataPesagem')?.invalid &&  SuinoPesoForm.get('DataPesagem')?.touched">
+                    <span class="error_message"> Compo Obrigatório</span>
+                </div>
+            </div>
+            <div class="input-group">
+                <label for="suinoPeso">Peso (kg)</label>
+                <input type="number" formControlName="suinoPeso" name="suinoPeso">
+                <div *ngIf="SuinoPesoForm.get('suinoPeso')?.invalid &&  SuinoPesoForm.get('suinoPeso')?.touched">
+                    <span class="error_message"> Compo Obrigatório</span>
+                </div>
+            </div>
+        </div>
+        <button type="submit" [disabled]="SuinoPesoForm.invalid">Atualizar</button>
+
+    </form>
+
+
+
+</main>

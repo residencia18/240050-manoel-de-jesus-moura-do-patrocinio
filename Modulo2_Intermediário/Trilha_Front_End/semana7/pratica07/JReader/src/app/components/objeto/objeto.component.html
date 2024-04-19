@@ -1,0 +1,14 @@
+<div *ngIf=" veiculos != null && veiculos.items.length > 0" >
+    <p class="conponent_title">{{veiculos.categoria}}</p>
+
+    <ul class="itens_list">
+        <li *ngFor = "let veiculo of veiculos.items" >
+            <button 
+                appVeiculos
+                class="itens_list__item "
+                (click)="selectVeiculo(veiculo)"
+                
+            >{{veiculo.Name}}</button>
+        </li>
+    </ul>
+</div>

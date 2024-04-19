@@ -1,0 +1,67 @@
+.card-suino-detail{
+    width: 25rem;
+ 
+    color: #242424;
+    text-align: left;
+
+    border: 1px solid #cecece;
+    border-radius: 5px;
+    padding: 1rem;
+    background-color: #fff;
+}
+h3,h4{
+    font-size: 1.1rem;
+    color: var(--Color-purple);
+}
+.row{
+    width: 100%;
+    display: flex;
+    justify-content: start;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin: 1rem 0;
+}
+
+
+.btn-option-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+}
+
+.btn-option-wrapper button, .btn-option-wrapper a{
+    width: max-content;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  
+
+    text-align: center;
+    color: var(--Color-purple);
+    font-size: 1rem;
+    
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-option-wrapper svg{
+    width: 1.5rem;
+    height: 1.5rem;
+    margin-bottom: .5rem;
+    
+}
+
+#link_register_peso{
+    display: block;
+    width: 100%;
+    text-align: center;
+    margin: 2rem 0;
+
+}
+

@@ -1,0 +1,11 @@
+Nome da Turma,Quantidade de Alunos,Nome da Trilha,Dados dos Residentes
+Turma B,20,Python,"                 Nome  Idade                Formacao  Area_Geral  ... Andamento_Graduacao  Tempo_Formado  Experiencia_Programacao  Trilha
+ID                                                                ...                                                                    
+tic18Pyt44497  Carlos     27  Graduação em andamento  Computação  ...                50.5          False                    False  Python
+
+[1 rows x 9 columns]"
+Turma B,20,.NET,"                  Nome  Idade             Formacao  Area_Geral  ... Andamento_Graduacao  Tempo_Formado  Experiencia_Programacao  Trilha
+ID                                                              ...                                                                    
+tic18.NE55505  Marcela     19  Graduação concluída  Computação  ...                60.0           True                    False    .NET
+
+[1 rows x 9 columns]"

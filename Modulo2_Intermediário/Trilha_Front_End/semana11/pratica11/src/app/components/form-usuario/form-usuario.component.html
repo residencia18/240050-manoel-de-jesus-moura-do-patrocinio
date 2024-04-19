@@ -1,0 +1,100 @@
+<form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+    <h2>Formulário de cadastro</h2>
+    <p>Preencha todos os campos para se registrar na plataforma</p>
+
+    <div class="input-group">
+        <label for="user_fistName">Primeiro Nome</label>
+        <input type="text" formControlName="user_fistName" name="user_fistName">
+        <div *ngIf="!userForm.get('user_fistName')?.valid &&  userForm.get('user_fistName')?.touched">
+            <span class="error_message"> Campo sem espaços e máximo de 12 caracteres.</span>
+        </div>
+
+
+    </div>
+
+    <div class="input-group">
+        <label for="user_fullName">Nome Completo</label>
+        <input type="text" formControlName="user_fullName" name="user_fullName">
+        <div *ngIf="userForm.get('user_fullName')?.errors?.['invalidFullName'] && userForm.get('user_fullName')?.touched">
+            <span class="error_message"> Informe no mínimo nome e sobrenome</span>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="input-group">
+            <label for="user_email">Sua Email</label>
+            <input type="email" formControlName="user_email" name="user_email">
+            <div *ngIf="!userForm.get('user_email')?.valid &&  userForm.get('user_email')?.touched">
+                <span class="error_message"> Informe um e-mail válido</span>
+            </div>
+        </div>
+        <div class="input-group">
+            <label for="user_password">Sua Senha</label>
+            <input type="password" formControlName="user_password" name="user_password">
+            <div *ngIf="!userForm.get('user_password')?.valid &&  userForm.get('user_password')?.touched">
+                <span class="error_message"> Mínimo de 4 caracteres, deve incluir pelo
+                    menos uma letra maiúscula e um símbolo</span>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="input-group">
+            <label for="user_phone">Nº Celular</label>
+            <input type="text" formControlName="user_phone" name="user_phone" placeholder="(XX)XXXXX-XXXX">
+            <div *ngIf="!userForm.get('user_phone')?.valid &&  userForm.get('user_phone')?.touched">
+                <span class="error_message"> Formato (XX)XXXXX-XXXX</span>
+            </div>
+        </div>
+        <div class="input-group">
+            <label for="user_address">Endereço(Rua e Nº)</label>
+            <input type="text" formControlName="user_address" name="user_address">
+            <div *ngIf="!userForm.get('user_address')?.valid && userForm.get('user_address')?.errors?.['invalidFullName']  &&  userForm.get('user_address')?.touched">
+                <span class="error_message">Informe um endereço válido </span>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="input-group">
+            <label for="user_birthday">Data de Nascimento</label>
+            <input type="date" formControlName="user_birthday" name="user_birthday">
+
+            <div *ngIf="userForm.get('user_birthday')?.invalid && (userForm.get('user_birthday')?.dirty || userForm.get('user_birthday')?.touched)">
+                <div *ngIf="userForm.get('user_birthday')?.errors?.['required']">
+                  <span *ngIf="userForm.get('user_birthday')?.errors?.['required']" class="error_message"> Campo obrigatório ! </span>
+                </div>
+                <div *ngIf="userForm.get('user_birthday')?.errors?.['invalidDate']">
+                  <span class="error_message"> Data de Nascimento inválida. </span>
+                </div>
+                <div *ngIf="userForm.get('user_birthday')?.errors?.['minAge']">
+                  <span class="error_message"> Idade mínima:18 anos. </span>
+                </div>
+              </div>
+        </div>
+        <div class="input-group">
+            <label for="user_gender">Gênero</label>
+            <select name="user_gender" formControlName="user_gender">
+                <option value="Masculino">Masculino</option>
+                <option value="Feminino">Feminino</option>
+            </select>
+            <div *ngIf="!userForm.get('user_gender')?.valid &&  userForm.get('user_gender')?.touched">
+                <span class="error_message"> Campo obrigatório !</span>
+            </div>
+        </div>
+
+        <div class="input-group">
+            <label for="user_profession">Profissão</label>
+            <select name="user_profession" formControlName="user_profession">
+                <option value="Programador">Programador</option>
+                <option value="TikToker">TikToker</option>
+                <option value="Gamer">Gamer</option>
+                <option value="Comércio Exterior">Comércio Exterior</option>
+            </select>
+            <div *ngIf="!userForm.get('user_profession')?.valid &&  userForm.get('user_profession')?.touched">
+                <span class="error_message"> Campo obrigatório !</span>
+            </div>
+        </div>
+    </div>
+
+    <button type="submit" [disabled]="userForm.invalid">Cadastrar</button>
+</form>

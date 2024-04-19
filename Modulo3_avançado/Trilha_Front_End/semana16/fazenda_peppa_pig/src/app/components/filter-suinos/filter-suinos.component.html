@@ -1,0 +1,9 @@
+<div class="container-filters">
+    <div *ngFor="let propriedade of propriedades" class="input-group">
+        <label>Filtre por {{ propriedade }}</label>
+        <select  (change)="atualizarOptionSelected(propriedade, $event)" >
+          <option value="" disabled selected>Selecione </option>
+          <option *ngFor="let valor of valoresUnicos[propriedade]" [value]="valor" >{{ valor }}</option>
+        </select>
+    </div>
+</div>

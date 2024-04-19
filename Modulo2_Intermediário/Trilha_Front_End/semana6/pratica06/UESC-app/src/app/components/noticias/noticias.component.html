@@ -1,0 +1,20 @@
+<article id="noticias">
+    <header>
+        <h2>Notícias</h2>
+    </header>
+    <div *ngIf="error">
+        <p>Não foi possível exibir as notícias no momento</p>
+    </div>
+    <div *ngIf="noticias.length > 0" id="noticias_content">
+        <div *ngFor="let noticia of noticias">
+            <h3>
+                <a href={{noticia.downloadUrl}} target="_blank" rel="noopener noreferrer">{{noticia.title}}</a>
+            </h3>
+            <p>{{noticia.description}}</p>
+        </div>
+    </div>
+    <div *ngIf="noticias.length === 0 && !error">
+        <p>Carregando...</p>
+    </div>
+
+</article>

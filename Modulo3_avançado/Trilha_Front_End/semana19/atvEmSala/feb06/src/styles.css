@@ -1,0 +1,34 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    font-family: "Fredoka", sans-serif;
+    font-size: 1rem;
+    text-decoration: none;
+    list-style: none;
+}
+
+body {
+    background-color: #f9f9f9;
+    position: relative;
+    max-width: 100vw;
+    overflow-x: hidden;
+}
+
+html {
+    position: relative;
+    scroll-behavior: smooth;
+}
+:root {
+    --font-primary: "Baloo Da 2", serif;
+    --font-secundary: "Josefin Slab", serif;
+    --font-action: "Muli", serif;
+    --Color-purple: #a044ff;
+    --Color-violet: #cb3bce;
+    --Color-dark: #17181b;
+    --Color-light-pink: #cc2b5e;
+    --Color-light-red: #f80759;
+}

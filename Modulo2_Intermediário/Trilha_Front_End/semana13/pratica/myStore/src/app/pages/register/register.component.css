@@ -1,0 +1,22 @@
+main{
+    text-align: center;
+    padding: 2% 20%;
+}
+h2{
+    font-size: 2rem;
+    color: #242424;
+    
+}
+
+ p{
+    font-size: 1.1rem;
+    color: #3b3b3b;
+    margin-bottom: 2rem;
+}
+
+@media(max-width:768px){
+    main{
+        text-align: center;
+        padding: 2% 5%;
+    }
+}

@@ -1,0 +1,88 @@
+{% extends 'index.html' %}
+
+{% block content %}
+  <header class="w-100 position-sticky top-0 left-0 shadow mb-3">
+    <nav class="w-100 navbar-expand-lg navbar bg-black border-bottom border-body" data-bs-theme="dark">
+      <div class="row col-12 justify-content-between align-items-end px-5 py-2 text-white">
+        <div class="col-3 d-flex justify-content-start">
+          <img src="https://assets.troc.com.br/general-site/assets/troc_logo.png" alt="logo" style="width: 5rem; height: 3rem;" />
+        </div>
+
+        <button class="navbar-toggler col-3 col-md-1 col-lg-1" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+
+        <div class="d-lg-none! collapse navbar-md-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0 d-lg-none d-xl-none">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Inicio</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">New In</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Roupas</a>
+              <ul class="dropdown-menu">
+                <li>
+                  <a class="dropdown-item" href="#">Maculinas</a>
+                </li>
+                <li>
+                  <a class="dropdown-item text-decoration-none text-black" href="{% url 'roupas' %}" class="text-decoration-none">Femininas</a>
+                </li>
+                <li>
+                  <hr class="dropdown-divider" />
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#">Kids</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+          <form class="d-flex d-lg-none d-xl-none" role="search ">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
+            <button class="btn btn-outline-success" type="submit">Search</button>
+          </form>
+        </div>
+
+        <form class="col-4 d-none d-none d-lg-block d-xl-block" role="search">
+          <input class="form-control me-2 bg-white text-black" type="search" placeholder="Buscar por ID, Nome, Marca ou Lojinha" aria-label="Search" />
+        </form>
+        <div class="col-3 d-none d-none d-lg-flex d-xl-flex justify-content-end gap-4">
+          <button class="btn border bg-gray-700">Quero Vender</button>
+          <button class="btn border bg-gray-700">Login</button>
+        </div>
+      </div>
+    </nav>
+    <ul class="nav row w-100 d-none d-md-flex justify-content-between py-2 text-center bg-white">
+      <li class="col-1 text-black">
+        <strong>New In</strong>
+      </li>
+      <li class="nav-item col-1 text-black">Luxos</li>
+      <li class="nav-item col-1 text-black "><a href="{% url 'roupas' %}" class="text-decoration-none text-black"> Roupas </a></li>
+      <li class="nav-item col-1 text-black">Bolsas</li>
+      <li class="nav-item col-1 text-black">Calçados</li>
+      <li class="nav-item col-1 text-black">Acessórios</li>
+      <li class="nav-item col-1 text-black">Marcas</li>
+      <li class="nav-item col-1 text-black">Lojinhas</li>
+      <li class="nav-item col-1 text-black">Bazar</li>
+      <li class="nav-item col-1 text-black">Influences</li>
+      <li class="nav-item col-1 text-black">Sale</li>
+      <li class="nav-item col-1 text-black">OutLet</li>
+    </ul>
+  </header>
+  <main class="w-100 d-flex flex-column align-items-center justify-content-center px-2 px-md-5 bg-light">
+    <div class="w-100">
+        <img src="https://assets.troc.com.br/general-site/marketing/women-trocmesconsumidor-1803-header_15032024.jpg?d=1330x0"  class="img-fluid w-100 h-100" alt="">
+    </div>
+
+    <div class="w-100  d-flex  flex-column flex-md-row  justify-content-center gap-2 mt-2">
+        <img src="https://assets.troc.com.br/general-site/marketing/women-trocmesconsumidor-1803-primeiracompra_15032024.png" class="img-fluid w-100 w-md-50" alt="">
+        <img src="https://assets.troc.com.br/general-site/marketing/women-trocmesconsumidor-1803-influsdamodacircular_15032024.png" class="img-fluid w-100 w-md-50" alt="">
+    </div>
+    <h2 class="w-100 text-center fs-2 text-black my-3">OUTLET</h2>
+    <div class="w-100 d-flex justify-content-center align-items-center flex-wrap gap-2">
+        <img  src="https://assets.troc.com.br/general-site/marketing/women-outlet-0512-calcadosschutzarezzo-1_13022024.png" class="img-fluid " style="width: 48%;" alt="">
+        <img  src="https://assets.troc.com.br/general-site/marketing/women-outlet-0512-bolsasschutzarezzo-1_13022024.png" class="img-fluid " style="width: 48%;" alt="">
+        <img  src="https://assets.troc.com.br/general-site/marketing/women-outlet-0512-reservago_05122023.png" class="img-fluid " style="width: 48%;" alt="">
+        <img  src="https://assets.troc.com.br/general-site/marketing/women-outlet-0512-birman_05122023.png" class="img-fluid " style="width: 48%;" alt="">
+    </div>
+  </main>
+{% endblock content%}

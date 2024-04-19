@@ -1,0 +1,27 @@
+[
+    {
+      "id": "1",
+      "name": "Site Uesc",
+      "skills": "Angular | JavaScript | TypeScript",
+      "description": "Site da UNIVERSIDADE ESTADUAL DE SANTA CRUZ",
+      "link": "https://trilha-front-5uls59y3f-manoelpatrocinio.vercel.app/",
+      "image": "/assets/uesc.png"
+    },
+    {
+      "id": "2",
+      "name": "Wiki Search",
+      "skills": "Angular | JavaScript | TypeScript",
+      "description": "Site de busca na wikipedia ",
+      "link": "https://trilha-front-912gyzj5a-manoelpatrocinio.vercel.app/",
+      "image": "/assets/wikisearch.png",
+      "link_github":""
+    },
+    {
+      "type": "site",
+      "name": "JReader",
+      "skills": "Angular | JavaScript | TypeScript",
+      "description": "Site para listagem de veículos",
+      "link": "https://trilha-front-pmk0cl99t-manoelpatrocinio.vercel.app/",
+      "image": "/assets/Jreader.pngs"
+    }
+  ]

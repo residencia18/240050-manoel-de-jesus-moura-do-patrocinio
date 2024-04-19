@@ -1,0 +1,33 @@
+#main-header{
+    width: 100%;
+    height: 55vh;
+
+    background-image: url('../../../assets/uesc-header-bg.webp');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 1rem;
+    padding-bottom: .8rem;
+}
+
+
+
+.slide-controls{
+    width:  2rem;
+    height: 4px;
+    border-radius: 2px;
+    background-color: #ffffffa1;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+.slide-controls:hover{
+    background-color: #ffffff;
+    width:  2.5rem;
+    height: 6px;
+    border-radius: 3px;
+
+}

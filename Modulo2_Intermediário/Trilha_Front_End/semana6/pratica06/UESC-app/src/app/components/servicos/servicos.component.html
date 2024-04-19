@@ -1,0 +1,27 @@
+<article id="servicos">
+    <header>
+        <h2>Serviços</h2>
+    </header>
+    <ul>
+        <li><a href="http://www.uesc.br/auditorios/"> Auditórios</a></li>
+        <li><a href="http://www.uesc.br/biblioteca/"> Biblioteca </a></li>
+        <li><a href="https://www.comprasnet.ba.gov.br/"> Licitações </a></li>
+        <li><a href="https://www.prograd.uesc.br/PortalSagres/"> Portal Acadêmico </a></li>
+    </ul>
+    <div id="clima_info">
+        <div *ngIf="error">
+            <p style="color: red;">Não foi possível exibir as informações climáticas no momento</p>
+          </div>
+        <div *ngIf="response.cod === 200">
+
+            <h3 style="margin-bottom: 1rem;">Temperatura</h3>
+            <p>Clima: {{response.weather[0].description}}</p>
+            <p>Temperatura: {{response.main.temp}}</p>
+            <p>Miníma: {{response.main.temp_min}}</p>
+            <p>Maxima: {{response.main.temp_max}}</p>
+        </div>
+        <div *ngIf="response.length === 0 && !error">
+            <p>Carregando...</p>
+          </div>
+    </div>
+</article>

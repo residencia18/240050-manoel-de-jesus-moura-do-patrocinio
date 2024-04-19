@@ -1,0 +1,30 @@
+<main>
+
+    <form [formGroup]="registerForm" (ngSubmit)="onSubmit(registerForm)">
+
+        <h2>Formulário de Cadastro</h2>
+        <p>Preencha todos os campos para se cadastrar na plataforma</p>
+
+        <div class="input-group">
+            <label for="user_email">Seu Email</label>
+            <input type="email" formControlName="user_email" name="user_email">
+            <div *ngIf="registerForm.get('user_email')?.invalid &&  registerForm.get('user_email')?.touched">
+                <span class="error_message"> Informe um e-mail válido</span>
+            </div>
+        </div>
+
+
+        <div class="input-group">
+            <label for="user_password">Senha</label>
+            <input type="password" formControlName="user_password" name="user_password">
+            <div *ngIf="registerForm.get('user_password')?.invalid && registerForm.get('user_password')?.touched">
+                <span class="error_message"> Mínimo de 4 caracteres, deve incluir pelo
+                    menos uma letra maiúscula e um símbolo </span>
+            </div>
+        </div>
+        <a routerLink="/login">Já tem uma conta ? <span>Acesse</span></a>
+
+        <button type="submit" [disabled]="registerForm.invalid">Salvar</button>
+    </form>
+
+</main>

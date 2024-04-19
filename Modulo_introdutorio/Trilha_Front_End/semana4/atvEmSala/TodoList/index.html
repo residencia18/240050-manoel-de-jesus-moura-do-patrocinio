@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo List</title>
+</head>
+
+<body>
+
+    <h1>Todo List</h1>
+
+    <form action="" id="form">
+        <input type="text" placeholder="Informe a tarefa" id="todoItem">
+        <button type="submit" id="adicionar">Adicionar</button>
+    </form>
+
+    <ul id="listaTarefas"> </ul>
+</body>
+
+<script>
+    let todoItems = []
+
+    document.querySelector('#form').addEventListener('submit', function (event) {
+        event.preventDefault();
+        let item = document.querySelector('#todoItem').value;
+        adicionaTarefaDOM(item)
+        item = ""
+    });
+
+    function adicionaTarefaDOM(item) {
+        todoItems.push(item)
+        let listUl = document.querySelector('#listaTarefas');
+        var listItem = document.createElement('li');
+
+        listItem.textContent = "--> " + item;
+        listUl.appendChild(listItem);
+        adicionaTarefaNoStorage()
+    }
+
+    function adicionaTarefaNoStorage() {
+        localStorage.setItem("todos", JSON.stringify(todoItems));
+    }
+    function recebeTarefaNoStorage() {
+        if (localStorage.getItem("todos") != null) {
+            todoItems = JSON.parse(localStorage.getItem("todos"))
+        }
+    }
+
+</script>
+
+</html>

@@ -1,0 +1,151 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-size: 1rem;
+    text-decoration: none;
+}
+body{
+    position: relative;
+}
+p{
+    
+    line-height: 1.5rem;
+    text-indent: 1rem;
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+}
+
+a{
+    font-family: 'Libre Baskerville', serif;
+    font-weight: 400;
+    font-style: italic;
+    color:#2f2f2f;
+    transition: all 0.3s ease-in-out;
+}
+a:hover{
+    color: #3470a8 !important;
+}
+h3{
+    color: #014A8E;
+    margin-top: 10px;
+    font-family: 'Roboto', sans-serif;
+   
+}
+main{
+    position: relative;
+    padding: .5rem;
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+}
+
+header{
+    position: relative;
+
+    width: 100%;
+    background-color: #014A8E;
+    text-align: center;
+    padding: 5px;
+    border-radius: 2px;
+}
+header h1,header h2{
+
+    color: aliceblue;
+    font-size: 1.2rem;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+}
+
+/* Alterei a instrução para adicionar position:pixed no footer do site e 
+adicionei no header da página o position:sticky, para que mantenha a hirarquia da página   
+*/
+#main-header{
+    width: 100%;
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    background-color: #000066;
+    padding: 1.5rem !important;
+}
+
+#main-header img{
+    width: 260px;
+    height: 100px;
+}
+
+#menu ul, #servicos ul{
+    padding-left: 10px;
+}
+#menu ul li, #servicos  ul li{
+    padding: .5rem 0;
+    list-style: none;
+    
+ 
+}
+#servicos a, #menu a{
+    color: #014A8E;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    font-style: normal;
+}
+
+#noticias div,#resultados div{
+    padding: 0 5px 0 10px;
+}
+
+#destaques{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+    gap: 10px;
+}
+.img-wrapper{
+    width: 90%;
+    height: 100px;
+  
+}
+.img-wrapper img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+#resultados div h3{
+    margin-top: 10px;
+}
+
+
+
+#section1{
+    display: grid;
+    grid-template-columns: 1fr 1.5fr .5fr;
+    column-gap: 5px;
+    margin: 10px 0 5px 0;
+}
+
+/* 25rem equivale 400px */
+#section2{
+    display: grid;
+    grid-template-columns: 1fr 2fr; 
+    column-gap: 5px;
+    margin-bottom: 12px;
+}
+
+footer{
+    text-align: center;
+    padding: 2rem .5rem;
+    background-color: #014A8E;
+    color: aliceblue;
+}
+
+@media(max-width: 500px){
+    #section1,
+    #section2{
+        grid-template-columns: auto !important;
+    } 
+}
+

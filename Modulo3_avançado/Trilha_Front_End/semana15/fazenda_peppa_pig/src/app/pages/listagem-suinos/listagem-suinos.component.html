@@ -1,0 +1,10 @@
+<main>
+    <h2>Suínos cadastrados</h2>
+
+
+    <app-filter-suinos [suinos]="listSuinos" (onFilteredSuinos)="filterList($event)"/>
+    <button id="btn_limpaFiltro"(click)="clearFilter()" >Limpar filtros</button>
+    <div class="card-wrapper">
+        <app-card-suino-detail *ngFor="let suino of filtedlistSuinos" [suino]="suino" />
+    </div>
+</main>

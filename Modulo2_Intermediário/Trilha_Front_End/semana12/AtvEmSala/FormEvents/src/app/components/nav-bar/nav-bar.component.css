@@ -1,0 +1,33 @@
+.nav-principal{
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 2rem 4rem;
+
+    background-color: #fff;
+    box-shadow: 0 3px 10px  rgba(0,0,0,.4)
+
+}
+
+.logo{
+    font-size: 1.2rem;
+    color: var(--Color-purple);
+}
+
+.items-menu{
+    display: flex;
+    justify-content: flex-start;
+    gap: 1rem;
+}
+
+.items-menu a{
+    color: #242424;
+    font-size: 1.2rem;
+    text-decoration: none;
+
+}

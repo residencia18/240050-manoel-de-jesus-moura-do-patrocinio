@@ -1,0 +1,18 @@
+#input-add-todo{
+    min-width:300px;
+    width: 10rem;
+    padding: 10px 1rem;
+    border: 1px solid #cecece ;
+    border-radius: 6px;
+}
+.input-group{
+    display: flex;
+    gap: 1rem
+}
+.input-group button{
+    background-color: #cecece;
+    color: #000;
+    border: none;
+    border-radius: 6px;
+    
+}

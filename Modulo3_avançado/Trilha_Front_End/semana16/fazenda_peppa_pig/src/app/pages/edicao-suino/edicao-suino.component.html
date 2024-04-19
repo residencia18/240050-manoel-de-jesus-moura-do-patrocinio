@@ -1,0 +1,87 @@
+<main>
+
+    <form [formGroup]="SuinoEditForm" (ngSubmit)="onSubmit(SuinoEditForm)">
+  
+      <h2>Formulário de Edição de suíno</h2>
+      <p>Altere o campo desejado e ao final, clique em atualizar</p>
+  
+      <div class="row">
+  
+        <div class="input-group">
+          <label for="Brinco">Nº do Brinco</label>
+          <input type="number" formControlName="Brinco" name="Brinco">
+          <div *ngIf="SuinoEditForm.get('Brinco')?.invalid &&  SuinoEditForm.get('Brinco')?.touched">
+            <span class="error_message"> Compo Obrigatório</span>
+          </div>
+        </div>
+  
+        <div class="input-group">
+          <label for="Status">Status</label>
+          <select name="Status" formControlName="Status">
+            <option value="Ativo">Ativo</option>
+            <option value="Vendido">Vendido</option>
+            <option value="Morto">Morto</option>
+          </select>
+          <div *ngIf="SuinoEditForm.get('Status')?.invalid &&  SuinoEditForm.get('Status')?.touched">
+            <span class="error_message"> Compo Obrigatório</span>
+          </div>
+        </div>
+  
+        <div class="input-group">
+          <label for="Sexo">Sexo</label>
+          <select name="Sexo" formControlName="Sexo">
+            <option value="M">Macho</option>
+            <option value="F">Fêmea</option>
+          </select>
+          <div *ngIf="SuinoEditForm.get('Sexo')?.invalid &&  SuinoEditForm.get('Sexo')?.touched">
+            <span class="error_message"> Compo Obrigatório</span>
+          </div>
+        </div>
+      </div>
+  
+      <div class="row">
+        <div class="input-group">
+          <label for="DataNascimento">Data de Nascimento</label>
+          <input type="date" formControlName="DataNascimento" name="DataNascimento">
+          <div
+            *ngIf="SuinoEditForm.get('DataNascimento')?.invalid &&  SuinoEditForm.get('DataNascimento')?.touched">
+            <span *ngIf="SuinoEditForm.get('DataNascimento')?.errors?.['required']" class="error_message"> Campo
+              obrigatório ! </span>
+            <span class="error_message" *ngIf="SuinoEditForm.get('DataNascimento')?.errors?.['invalidDate']"> Idade
+              maior que a data atual</span>
+          </div>
+        </div>
+  
+  
+        <div class="input-group">
+          <label for="DataSaida">Data de Saída</label>
+          <input type="date" formControlName="DataSaida" name="DataSaida">
+          <div *ngIf="SuinoEditForm.get('DataSaida')?.invalid &&  SuinoEditForm.get('DataSaida')?.touched">
+            <span class="error_message"> Compo Obrigatório</span>
+          </div>
+        </div>
+      </div>
+  
+      <div class="row">
+  
+        <div class="input-group">
+          <label for="BrincoPai">Nº do Brinco Pai</label>
+          <input type="number" formControlName="BrincoPai" name="BrincoPai">
+          <div *ngIf="SuinoEditForm.get('BrincoPai')?.invalid &&  SuinoEditForm.get('BrincoPai')?.touched">
+            <span class="error_message"> Compo Obrigatório</span>
+          </div>
+        </div>
+  
+        <div class="input-group">
+          <label for="BrincoMae">Nº do Brinco Mãe</label>
+          <input type="number" formControlName="BrincoMae" name="BrincoMae">
+          <div *ngIf="SuinoEditForm.get('BrincoMae')?.invalid &&  SuinoEditForm.get('BrincoMae')?.touched">
+            <span class="error_message"> Compo Obrigatório</span>
+          </div>
+        </div>
+      </div>
+  
+      <button type="submit" [disabled]="SuinoEditForm.invalid">Atualizar</button>
+    </form>
+  
+  </main>

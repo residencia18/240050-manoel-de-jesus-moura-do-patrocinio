@@ -1,0 +1,8 @@
+
+.componets_containar{
+    display: flex;
+    justify-content: start;
+    align-items: flex-start;
+    gap: 2rem;
+    margin: 2rem 0;
+}

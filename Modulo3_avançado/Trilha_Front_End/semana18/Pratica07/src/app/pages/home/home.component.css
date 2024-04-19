@@ -1,0 +1,34 @@
+header{
+    width: 100%;
+    min-width: 100vw;
+    max-width: 100vw;
+    height: 95vh;
+    overflow: hidden;
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),   url('../../../assets/paisagem-pacifica-extra-longa-com-arvores.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+header iframe{
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+.text{
+    display: block;
+    width: 100%;
+    text-align: center;
+    left: 0;
+    top: 0;
+    margin: 15% 0 0 0;
+}
+
+.text h2{
+    font-size: 2rem;
+    color: var(--Color-purple);
+}
+
+.text h3{
+    font-size: 1.4rem;
+    color: var(--Color-purple);
+
+}

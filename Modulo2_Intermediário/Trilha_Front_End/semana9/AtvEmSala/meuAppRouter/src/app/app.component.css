@@ -1,0 +1,31 @@
+
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 1rem;
+}
+p{
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+nav{
+    list-style: none;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 2rem;
+}
+
+ a{
+    padding: .5rem;
+    color:#242424;
+    font-size: 1.2rem;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+main{
+    width: 100%;
+    height: auto;
+}

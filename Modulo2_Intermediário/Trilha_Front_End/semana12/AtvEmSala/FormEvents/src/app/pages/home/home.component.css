@@ -1,0 +1,15 @@
+article {
+    height: 100%;
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-content: center;
+}
+
+h3 {
+
+    font-size: 1.5rem;
+    color: var(--Color-purple);
+}

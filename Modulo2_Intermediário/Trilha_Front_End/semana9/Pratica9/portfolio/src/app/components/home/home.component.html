@@ -1,0 +1,22 @@
+<header id="main_header">
+
+    <div class="banner">
+        <h1 id="banner__apresentation-text">
+            Olá, <br />
+            Eu sou o <span id="myName">Manoel</span>
+            <br />
+            <span id="banner__text-occupation"> Desenvolvedor Web</span>
+        </h1>
+        <p id="banner__skill-text">Front End | Back End | UI/UX Designer</p>
+
+        <a id="banner__btn_download-cv" href="assets/cv_Manoel_patrocinio.pdf" download="ManoelPatrocinioCV">
+            Download CV
+        </a>
+    </div>
+</header>
+<main>
+    <h2 class="section-title">Projetos</h2>
+    <div class="cards-content" >
+        <app-card-project [project]="project" *ngFor=" let project  of projectsList " />
+    </div>
+</main>

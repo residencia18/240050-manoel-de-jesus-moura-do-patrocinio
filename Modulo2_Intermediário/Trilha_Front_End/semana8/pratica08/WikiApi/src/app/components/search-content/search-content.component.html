@@ -1,0 +1,10 @@
+<div *ngIf="pageContent != undefined" id="container">
+  <h2>Resultado para "{{pageContent!.parse.title }}"</h2>
+  <h3 [innerHTML]="pageContent!.parse.title| boldText:pageContent!.parse.title">{{ pageContent!.parse.title }}</h3>
+
+  <div [innerHTML]="pageContent!.parse.text['*'].split('\n').slice(0, 10).join('\n') " id="pagecontent"></div>
+
+  <p><a [href]="getFullPageLink()" target="_blank">Ver mais informações</a></p>
+
+
+</div>

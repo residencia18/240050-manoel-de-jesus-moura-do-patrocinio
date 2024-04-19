@@ -1,0 +1,119 @@
+<main>
+    <div *ngIf="!registerStep" id="step1">
+
+        <h1 class="section_title">Filtro de animais</h1>
+        <p class="section_title__text">Filtre os animais que deseja adicionar na sessão para manejo, ao final clique em
+            AVANÇAR</p>
+
+
+        <app-filter-suinos [suinos]="listSuinos" (onFilteredSuinos)="filterList($event)" />
+        <button id="btn_limpaFiltro" (click)="clearFilter()">Limpar filtros</button>
+        <div class="card-wrapper">
+            <app-card-suino-detail *ngFor="let suino of filteredListSuinos" [suino]="suino" [CardType]="'manejo'"
+                (selectSuino)="addSuinoToManejoList($event)" />
+        </div>
+
+
+        <section *ngIf="listSuinosSelectedToManejo.length > 0" id="table_section">
+
+            <h2 class="section_subtitle">Animais Selecionados</h2>
+            <p class="section_title__text">Revise a liste de animais selecionados e, ao final, clique em AVANÇAR</p>
+
+            <table class="tabela">
+                <thead>
+                    <tr>
+                        <th>Brinco</th>
+                        <th>Idade</th>
+                        <th>Sexo</th>
+                        <th>Brinco da Mãe</th>
+                        <th>Brinco da Pai</th>
+                        <th>Opt.</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let suino of listSuinosSelectedToManejo">
+                        <td>{{suino.Brinco}}</td>
+                        <td>{{suino.DataNascimento| dateInMonths}} M</td>
+                        <td>{{suino.Sexo}}</td>
+                        <td>Nº {{suino.BrincoMae}}</td>
+                        <td>Nº {{suino.BrincoPai}}</td>
+                        <td><button (click)="removeSuinoToManejoList(suino)">Remover</button></td>
+                    </tr>
+
+
+                </tbody>
+
+            </table>
+
+            <button *ngIf="!registerStep" class="btn_primary" (click)="toggleStep()">Avançar</button>
+
+        </section>
+        
+    </div>
+
+    <div *ngIf="registerStep" id="step2">
+        <h2 class="section_title">Cadastro de sessão </h2>
+        <form [formGroup]="registerSectionForm" (ngSubmit)="onSubmit(registerSectionForm)">
+            <p>Define a data e  adicione uma descrição resumida para a sessão</p>
+            <div class="row">
+
+                <div class="input-group">
+                    <label for="Brinco">Data da sessão</label>
+                    <input type="date" formControlName="s_date" name="s_date">
+                    <div
+                        *ngIf="registerSectionForm.get('s_date')?.invalid &&  registerSectionForm.get('s_date')?.touched">
+                        <span class="error_message"> Compo Obrigatório</span>
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <label for="s_description">Descrição</label>
+                    <textarea rows="2" name="s_description" formControlName="s_description"></textarea>
+
+                    <div *ngIf="registerSectionForm.get('s_description')?.invalid &&  registerSectionForm.get('s_description')?.touched">
+                     <span class="error_message"> Compo Obrigatório</span>
+                    </div>
+                </div>
+        
+            </div>
+            <p style="margin-top: 2rem;">Escolha o animal e as atividades que ele irá realizar nessa sessão, ao final  clique em adicionar .</p>
+
+            <div class="row">
+
+                <div class="input-group">
+                    <label for="Brinco">Animal</label>
+                    <select  name="s_brincoAnimal" formControlName="s_brincoAnimal">
+                        <option value="" disabled selected>Selecione </option>
+                        <option *ngFor="let animal of listSuinosSelectedToManejo" [value]="animal.Brinco" >{{ animal.Brinco }}</option>
+                    </select>
+                    <div
+                        *ngIf="registerSectionForm.get('s_date')?.invalid &&  registerSectionForm.get('s_date')?.touched">
+                        <span class="error_message"> Compo Obrigatório</span>
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <label for="s_description">Atividade(s)</label>
+                    <select  
+                        name="s_atividades" 
+                        formControlName="s_atividades" 
+                        multiple
+                    >
+                        <option value="" disabled selected>Selecione </option>
+                        <option value="Raiva" >Raiva </option>
+                        <option value="Rinite_Atrófica" >Rinite Atrófica </option>
+                        <option value="Parvovirose_Suína" >Parvovirose Suína </option>
+                    </select>    
+                    <div *ngIf="registerSectionForm.get('s_atividades')?.invalid &&  registerSectionForm.get('s_atividades')?.touched">
+                     <span class="error_message"> Compo Obrigatório</span>
+                    </div>
+                </div>
+
+                <button type="button" (click)="setAnimalAndAtividades()" class="btn_primary"> Adicionar</button>
+        
+            </div>
+    
+            <button type="submit" [disabled]="listAnimaisAtividade.length <= 0 && registerSectionForm.invalid" class="btn_primary">Cadastrar</button>
+        </form>
+    </div>
+</main>

@@ -1,0 +1,22 @@
+footer, ul{
+    width: 100%;
+    list-style-type: none;
+    margin: 0; 
+}
+footer ul{
+    
+    display: flex;
+    justify-content: start;
+    align-items: flex-end;
+    gap: 2px;
+    overflow-x: auto;
+    padding-left: 0;
+}
+
+footer ul li{
+    border: 1px solid #cecece;
+    border-radius: 4px;
+    color: #242424;
+    text-align: center;
+    padding: 1rem;
+}

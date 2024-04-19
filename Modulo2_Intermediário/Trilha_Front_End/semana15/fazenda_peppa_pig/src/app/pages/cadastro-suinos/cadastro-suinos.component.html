@@ -1,0 +1,87 @@
+<main>
+
+  <form [formGroup]="registerSuinoForm" (ngSubmit)="onSubmit(registerSuinoForm)">
+
+    <h2>Formulário de Cadastro</h2>
+    <p>Preencha todos os campos para se cadastrar na plataforma</p>
+
+    <div class="row">
+
+      <div class="input-group">
+        <label for="Brinco">Nº do Brinco</label>
+        <input type="number" formControlName="Brinco" name="Brinco">
+        <div *ngIf="registerSuinoForm.get('Brinco')?.invalid &&  registerSuinoForm.get('Brinco')?.touched">
+          <span class="error_message"> Compo Obrigatório</span>
+        </div>
+      </div>
+
+      <div class="input-group">
+        <label for="Status">Status</label>
+        <select name="Status" formControlName="Status">
+          <option value="Ativo">Ativo</option>
+          <option value="Vendido">Vendido</option>
+          <option value="Morto">Morto</option>
+        </select>
+        <div *ngIf="registerSuinoForm.get('Status')?.invalid &&  registerSuinoForm.get('Status')?.touched">
+          <span class="error_message"> Compo Obrigatório</span>
+        </div>
+      </div>
+
+      <div class="input-group">
+        <label for="Sexo">Sexo</label>
+        <select name="Sexo" formControlName="Sexo">
+          <option value="M">Macho</option>
+          <option value="F">Fêmea</option>
+        </select>
+        <div *ngIf="registerSuinoForm.get('Sexo')?.invalid &&  registerSuinoForm.get('Sexo')?.touched">
+          <span class="error_message"> Compo Obrigatório</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="input-group">
+        <label for="DataNascimento">Data de Nascimento</label>
+        <input type="date" formControlName="DataNascimento" name="DataNascimento">
+        <div
+          *ngIf="registerSuinoForm.get('DataNascimento')?.invalid &&  registerSuinoForm.get('DataNascimento')?.touched">
+          <span *ngIf="registerSuinoForm.get('DataNascimento')?.errors?.['required']" class="error_message"> Campo
+            obrigatório ! </span>
+          <span class="error_message" *ngIf="registerSuinoForm.get('DataNascimento')?.errors?.['invalidDate']"> Idade
+            maior que a data atual</span>
+        </div>
+      </div>
+
+
+      <div class="input-group">
+        <label for="DataSaida">Data de Saída</label>
+        <input type="date" formControlName="DataSaida" name="DataSaida">
+        <div *ngIf="registerSuinoForm.get('DataSaida')?.invalid &&  registerSuinoForm.get('DataSaida')?.touched">
+          <span class="error_message"> Compo Obrigatório</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+
+      <div class="input-group">
+        <label for="BrincoPai">Nº do Brinco Pai</label>
+        <input type="number" formControlName="BrincoPai" name="BrincoPai">
+        <div *ngIf="registerSuinoForm.get('BrincoPai')?.invalid &&  registerSuinoForm.get('BrincoPai')?.touched">
+          <span class="error_message"> Compo Obrigatório</span>
+        </div>
+      </div>
+
+      <div class="input-group">
+        <label for="BrincoMae">Nº do Brinco Mãe</label>
+        <input type="number" formControlName="BrincoMae" name="BrincoMae">
+        <div *ngIf="registerSuinoForm.get('BrincoMae')?.invalid &&  registerSuinoForm.get('BrincoMae')?.touched">
+          <span class="error_message"> Compo Obrigatório</span>
+        </div>
+      </div>
+    </div>
+
+    <button type="submit" [disabled]="registerSuinoForm.invalid">Cadastrar</button>
+  </form>
+
+</main>

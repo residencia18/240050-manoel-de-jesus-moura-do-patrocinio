@@ -1,0 +1,32 @@
+#servicos ul{
+    padding-left: 10px;
+}
+ #servicos  ul li{
+    padding: .5rem 0;
+    list-style: none;
+    
+ 
+}
+#servicos a, #menu a{
+    color: #014A8E;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    font-style: normal;
+}
+
+#clima_info {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: flex-start;
+    margin-top: 1rem;
+}
+
+#clima_info p{
+    width: 100%;
+    text-align: left;
+    color: #242424;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}

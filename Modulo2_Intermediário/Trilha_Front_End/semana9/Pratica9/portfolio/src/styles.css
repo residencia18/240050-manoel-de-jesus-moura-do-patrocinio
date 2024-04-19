@@ -1,0 +1,76 @@
+@import url("https://fonts.googleapis.com/css2?family=Baloo+Da+2:wght@400;500;600;700&family=Josefin+Slab:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600&family=Muli:ital,wght@0,200;0,300;0,400;0,500;1,200;1,300;1,400&display=swap");
+
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css");
+
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+/* variaveis pra determinar a font */
+:root {
+    --font-primary: "Baloo Da 2", serif;
+    --font-secundary: "Josefin Slab", serif;
+    --font-action: "Muli", serif;
+    --Color-purple: #a044ff;
+    --Color-violet: #cb3bce;
+    --Color-dark: #17181b;
+    --Color-light-pink: #cc2b5e;
+    --Color-light-red: #f80759;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--Color-dark);
+    overflow-x: hidden;
+    width: 100vw;
+}
+
+*::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    border-radius: 1rem;
+}
+
+*::-webkit-scrollbar-thumb {
+    border-radius: 2px;
+    -webkit-box-shadow: inset 0 0 6px var(--Color-purple);
+    box-shadow: inset 0 0 6px var(--Color-purple);
+}
+
+.section-title{
+    width: 100%;
+    font-family: var(--font-primary);
+    text-align: center;
+    font-size: 3rem;
+    color: var(--Color-light-red);
+    margin: 1.5rem 0;
+
+}
+
+
+.btn {
+    background: var(--Color-light-pink);
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(
+      to right,
+      #753a88,
+      var(--Color-light-pink)
+    );
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #753a88, var(--Color-light-pink));
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    color: #eee;
+    border-radius: 0.5rem;
+    border: none;
+    box-shadow: 0 0.1rem 0.8rem rgba(0, 0, 0, 0.4);
+    cursor: pointer;
+  }
+  

@@ -1,0 +1,10 @@
+<article> 
+    <h3>Confira meus projetos</h3>
+    <div class="projects-container">
+        <div *ngFor="let proj of projetos">
+            <h5>{{proj.projectName}}</h5>
+            <a href=`{{proj.projectLink}}`>Acesse aqui</a>
+        </div>
+    </div>
+
+</article>

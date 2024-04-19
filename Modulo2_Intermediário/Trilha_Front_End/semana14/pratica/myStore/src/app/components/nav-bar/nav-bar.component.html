@@ -1,0 +1,16 @@
+<nav class="nav-principal">
+  <a  routerLink="/" class="logo">Petshop</a>
+
+  <div class="items-menu">
+    <li> <a routerLink="/">Início</a></li>
+    <li> <a routerLink="services">Serviços</a></li>
+    <li *ngIf="isAuthenticated" id="lk-menu-atendimento">Atendimentos
+      <ul id="menu-atendimento">
+        <li><a routerLink="resgister-atend"> Cadastro </a></li>
+        <li><a routerLink="list-atend"> Listagem </a></li>
+      </ul>
+    </li>
+    <li> <a  *ngIf="isAuthenticated" (click)="logout()">Logout</a></li>
+    <li> <a  *ngIf="!isAuthenticated" routerLink="login" >Entrar/Criar</a></li>
+  </div>
+</nav>

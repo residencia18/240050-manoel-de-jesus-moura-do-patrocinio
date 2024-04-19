@@ -1,0 +1,21 @@
+#noticias div{
+    padding: 0 5px 0 10px;
+}
+#noticias_content{
+    height: 300px;
+    overflow-y: auto;
+}
+#noticias_content a{
+    color: #014A8E;
+
+}
+#noticias_content a:hover{
+    color: #000066 !important;
+
+}
+#noticias_content p{
+    width: 100%;
+    height: 6.25rem;
+    text-overflow: ellipsis;
+    overflow: hidden; 
+}

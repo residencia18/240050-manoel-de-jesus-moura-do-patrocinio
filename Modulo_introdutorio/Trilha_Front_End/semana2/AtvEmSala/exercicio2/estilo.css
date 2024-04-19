@@ -1,0 +1,27 @@
+img {
+    width: 200px;
+    height: 200px;
+}
+h3{
+    font-weight: normal
+}
+
+#amarelo{
+    color: yellow;
+}
+#vermelho{
+    color: red;
+
+}
+#azul{
+    color: blue;
+
+}
+#marron{
+    color: brown;
+
+}
+#violeta{
+    color: violet;
+
+}

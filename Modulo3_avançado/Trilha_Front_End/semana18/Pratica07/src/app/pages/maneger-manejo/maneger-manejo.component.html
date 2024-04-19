@@ -1,0 +1,82 @@
+<main>
+
+
+  <form [formGroup]="editForm" (ngSubmit)="onSubmit(editForm)">
+    <h2>Formulário de gerenciamento</h2>
+    <p>Altera o(s) dado(s) desejado e/ou marque uma tarefa como completa, ou final, clique em 'Atualizar'</p>
+
+    <div class="row" style="margin-bottom: 2rem;">
+      <div class="input-group">
+        <label for="s_date">Data da sessão</label>
+        <input type="date" formControlName="s_date" name="s_date">
+        <div *ngIf="editForm.get('s_date')?.invalid &&  editForm.get('s_date')?.touched">
+          <span class="error_message"> Compo Obrigatório</span>
+        </div>
+      </div>
+      <div class="input-group">
+        <label for="s_description">Descrição</label>
+        <input type="text" formControlName="s_description" name="s_description">
+        <div *ngIf="editForm.get('s_description')?.invalid &&  editForm.get('s_description')?.touched">
+          <span class="error_message"> Compo Obrigatório</span>
+        </div>
+      </div>
+    </div>
+    <h3 class="section_subtitle">Controle de atividades</h3>
+    <p class="section_title__text"> Marque as atividades que já foram realizadas relacionadas a cada animail</p>
+    <div formArrayName="s_animais" id="formAnimailAtv">
+      <div *ngFor="let animal of animalFormArray.controls;  let i=index">
+        <div [formGroupName]="i" class="animal_atv_wrapper">
+          <div class="input-group" style="align-items: center;">
+            <label for="suinoBrinco">Brinco do Suíno: </label>
+            <input type="text" formControlName="suinoBrinco" name="suinoBrinco"
+              style="border: none !important; text-align: center;" value="A3434" readonly>
+          </div>
+
+          <div formArrayName="atividades" class="row" style="justify-content: center;">
+            <div *ngFor="let atividade of animal.get('atividades').controls; let j=index">
+              <div [formGroupName]="j" class="atv_input-group">
+                <label>{{atividade.value.atv_name}}</label>
+                <input type="checkbox" formControlName="atv_status">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+
+    </div>
+    <button type="submit" class="btn_primary">Atualizar</button>
+
+  </form>
+
+  <!-- <form [formGroup]="editForm" (ngSubmit)="onSubmit(editForm)">
+    <label for="s_date">Data:</label>
+    <input type="date" id="s_date" formControlName="s_date"><br>
+
+    <label for="s_description">Descrição:</label>
+    <input type="text" id="s_description" formControlName="s_description"><br>
+
+    <div formArrayName="s_animais">
+      <div *ngFor="let animal of animalFormArray.controls;  let i=index">
+        <div [formGroupName]="i">
+          <label for="suinoBrinco">Suino Brinco:</label>
+          <input type="text" id="suinoBrinco" formControlName="suinoBrinco"><br>
+
+          <div formArrayName="atividades">
+            <div *ngFor="let atividade of animal.get('atividades').controls; let j=index">
+              <div [formGroupName]="j">
+                <label>{{ atividade.value.atv_name }}</label>
+                <input type="checkbox" formControlName="atv_status"><br>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <button type="submit">Salvar</button>
+  </form> -->
+
+</main>

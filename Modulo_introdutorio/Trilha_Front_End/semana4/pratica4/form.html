@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estilo.css">
+    <title>Cadastro de Pacote</title>
+</head>
+
+<body>
+    <main>
+
+        <form action="" id="form">
+            <h1>Cadastro de Pacote</h1>
+            <div class="input-group">
+                <label for="destino">Destino</label>
+                <input type="text" placeholder="informe o destino" id="destino">
+            </div>
+            <div class="input-group">
+                <label for="imagem">Url Da imagem</label>
+                <input type="text" placeholder="link da imagem" id="imagem">
+            </div>
+            <div class="input-group">
+                <label for="incluso">Incluso</label>
+                <div class="row">
+                    <div class="input-group row">
+                        <div class="input-group-radio row">
+                            <input type="radio" value="ida" name="passagem">
+                            <label>Ida</label>
+                        </div>
+                        <div class="input-group-radio row">
+                            <input type="radio" value="ida e volta" name="passagem">
+                            <label>Ida e volta</label>
+                        </div>
+
+                    </div>
+                    <div class="input-group row">
+                        <label for="dias">Dias: </label>
+                        <input type="number" id="dias">
+                    </div>
+                </div>
+            </div>
+
+            <div class="input-group">
+                <label for="alimentacao">Alimentação</label>
+                <input type="text" placeholder="informe as refeições inclusas" id="alimentacao">
+            </div>
+            <div class="row">
+
+                <div class="input-group">
+                    <label for="valor">Valor</label>
+                    <input type="number" id="valor">
+                </div>
+                <div class="input-group" s>
+                    <label for="parcelas">Parcelas</label>
+                    <input type="number" id="parcelas">
+                </div>
+            </div>
+            <button type="submit" id="formBtn">Inserir</button>
+        </form>
+    </main>
+
+
+    <script>
+        let pacotes = []
+
+        document.querySelector('#form').addEventListener('submit', function (event) {
+            event.preventDefault();
+
+            let novoPacote = {
+                "destino": event.target['destino'].value,
+                "urlImg": event.target['imagem'].value,
+                "passagem": event.target['passagem'].value,
+                "dias": event.target['dias'].value,
+                "alimentacao": event.target['alimentacao'].value,
+                "preco": event.target['valor'].value,
+                "parcelas": event.target['parcelas'].value,
+            }
+
+            pacotes.push(novoPacote)
+            adicionaTarefaNoStorage(pacotes)
+            alert("Pacote cadastrado com sucesso")
+            window.location.href = "index.html"
+        })
+
+        function adicionaTarefaNoStorage(item) {
+            localStorage.setItem("pacotes", JSON.stringify(item));
+        }
+    </script>
+</body>
+
+</html>

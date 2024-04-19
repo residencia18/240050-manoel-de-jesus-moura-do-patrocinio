@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Roteiros Turísticos</title>
+    <link rel="stylesheet" href="estilo.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter&family=Roboto:ital,wght@0,400;0,700;1,300&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <main>
+        <div class="container-destinos">
+            <div class="roteiros-viagens">
+                <img src="./assets/imgs/salvador.jpg" class="postal">
+                <h2 class="roteiro-destino">Salvador</h2>
+                <ul class="roteiro-incluso">
+                    <li>Áereo ida e volta</li>
+                    <li>03 diárias</li>
+                    <li>Café da Manhã</li>
+                </ul>
+                <p class="roteiro-preco">R$670,00</p>
+                <p class="roteiro-obs">Taxas Inclusas</p>
+                <p class="roteiro-parcelamento">Em até 10x sem Juros</p>
+                <button class="roteiro-comprar">Comprar</button>
+
+            </div>
+            <div class="roteiros-viagens">
+                <img src="./assets/imgs/fortaleza.jpg">
+                <h2 class="roteiro-destino">Fortaleza</h2>
+                <ul class="roteiro-incluso">
+                    <li>Áereo ida e volta</li>
+                    <li>06 diárias</li>
+                    <li>Café da Manhã</li>
+                </ul>
+                <p class="roteiro-preco">R$1513,00</p>
+                <p class="roteiro-obs">Taxas Inclusas</p>
+                <p class="roteiro-parcelamento">Em até 10x sem Juros</p>
+                <button class="roteiro-comprar">Comprar</button>
+
+            </div>
+            <div class="roteiros-viagens">
+                <img src="./assets/imgs/campinas.jpg">
+                <h2 class="roteiro-destino">Campinas</h2>
+                <ul class="roteiro-incluso">
+                    <li class="roteiro-passagem">Áereo ida e volta</li>
+                    <li class="roteiro-dias">04 diárias</li>
+                    <li class="roteiro-alimentacao">Café da Manhã</li>
+                </ul>
+                <p class="roteiro-preco">R$900,00</p>
+                <p class="roteiro-obs">Taxas Inclusas</p>
+                <p class="roteiro-parcelamento">Em até 10x sem Juros</p>
+                <button class="roteiro-comprar">Comprar</button>
+
+            </div>
+
+        </div>
+    </main>
+    <a href="./form.html" id="addPacote">Cadastrar pacote</a>
+    <script>
+        document.querySelector('.roteiro-comprar').addEventListener('click', function (event) {
+            let destino = document.querySelector('.roteiro-destino')
+            let passagem = document.querySelector('.roteiro-passagem')
+            let dias = document.querySelector('.roteiro-dias')
+            let alimentacao = document.querySelector('.roteiro-alimentacao')
+            let preco = document.querySelector('.roteiro-preco')
+            let parcelas = document.querySelector('.roteiro-parcelamento')
+
+            let objeto = {
+                "destino: ": destino.innerHTML,
+                "passagem: ": passagem.innerHTML,
+                "dias: ": dias.innerHTML,
+                "alimentacao: ": alimentacao.innerHTML,
+                "preco: ": preco.innerHTML,
+                "parcelas: ": parcelas.innerHTML,
+            }
+
+            var jsonObj = JSON.stringify(objeto);
+            console.log("Pacote desejado: ", jsonObj)
+
+        });
+
+        function criarDivPacote() {
+            let listaPacotes = recebePacoteDoStorage()
+            console.log("listaPacotes: ", listaPacotes)
+
+            listaPacotes && listaPacotes.forEach((pacote) => {
+
+                adicionaPacoteDOM(pacote)
+            })
+        }
+        function adicionaPacoteDOM(pacote) {
+            console.log("pacote: ", pacote)
+
+            let container = document.querySelector('.container-destinos');
+            var pacoteItem = document.createElement('div');
+
+            pacoteItem.className = "roteiros-viagens"
+
+
+            pacoteItem.innerHTML = ` 
+                <img src= ${pacote.urlImg} class="postal">
+                <h2 class="roteiro-destino"> ${pacote.destino}</h2> 
+                <ul class="roteiro-incluso">
+                    <li class="roteiro-passagem">Áereo ${pacote.passagem}</li>
+                    <li class="roteiro-dias"> ${pacote.dias} diarias</li>
+                    <li class="roteiro-alimentacao"> ${pacote.alimentacao}</li>
+                </ul>
+                <p class="roteiro-preco">R$ ${pacote.preco}</p>
+                <p class="roteiro-obs">Taxas Inclusas</p>
+                <p class="roteiro-parcelamento">Em até ${pacote.parcelas}x sem Juros</p>
+                <button class="roteiro-comprar">Comprar</button>
+            `
+
+            container.appendChild(pacoteItem);
+        }
+
+        function recebePacoteDoStorage() {
+            if (localStorage.getItem("pacotes") != null) {
+                pacotesLocalStorage = JSON.parse(localStorage.getItem("pacotes"))
+                return pacotesLocalStorage
+            }
+            return null
+        }
+
+        criarDivPacote()
+
+    </script>
+</body>
+
+</html>

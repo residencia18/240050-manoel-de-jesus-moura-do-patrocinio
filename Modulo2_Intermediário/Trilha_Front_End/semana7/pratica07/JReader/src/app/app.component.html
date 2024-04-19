@@ -1,0 +1,13 @@
+<main>
+  <input type="file" name="" id="">
+  <div class="componets_containar">
+    <app-classe [categorias]="result" (categoriaEscolhida)="categorySelect = $event" />
+    <app-objeto [veiculos]="categorySelect" (veiculoEscolhida)="setVeiculoSelected($event)" />
+    <app-propriedade [veiculo]="veiculoSelect" (propEscolhida)="setPropSelected($event)" />
+    <app-valor-propriedade [prop]="propSelect" />
+
+    <button class="conponent_title" *ngIf="categorySelect.items.length > 0" (click)="addVeiculos(veiculoSelect!)">
+      Adicionar</button>
+  </div>
+  <app-footer [veiculosSelecteds]="veiculoList" />
+</main>

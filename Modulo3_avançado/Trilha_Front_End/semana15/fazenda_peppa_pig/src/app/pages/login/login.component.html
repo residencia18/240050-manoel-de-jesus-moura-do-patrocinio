@@ -1,0 +1,29 @@
+<main>
+
+  <form [formGroup]="loginForm" (ngSubmit)="onSubmit(loginForm)">
+
+    <h2>Formulário de Login</h2>
+    <p>Preencha todos os campos para se entrar na plataforma</p>
+
+    <div class="input-group">
+      <label for="user_email">Seu Email</label>
+      <input type="email" formControlName="user_email" name="user_email">
+      <div *ngIf="loginForm.get('user_email')?.invalid &&  loginForm.get('user_email')?.touched">
+        <span class="error_message"> Informe um e-mail válido</span>
+      </div>
+    </div>
+
+
+    <div class="input-group">
+      <label for="user_password">Senha</label>
+      <input type="password" formControlName="user_password" name="user_password">
+      <div *ngIf="loginForm.get('user_password')?.invalid && loginForm.get('user_password')?.touched">
+        <span class="error_message"> Mínimo de 4 caracteres, deve incluir pelo
+          menos uma letra maiúscula e um símbolo </span>
+      </div>
+    </div>
+    <a routerLink="/register">Ainda não tem uma conta ? <span>Registre-se</span></a>
+    <button type="submit" [disabled]="loginForm.invalid">Login</button>
+  </form>
+
+</main>

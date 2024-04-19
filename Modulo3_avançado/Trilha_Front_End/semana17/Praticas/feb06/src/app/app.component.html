@@ -1,0 +1,15 @@
+<main>
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <h2>Cadastro de País</h2>
+    <p>Informe os dados básicos dos países</p>
+    <div class="input-group" *ngFor="let field of camposChaves">
+      <label for="{{field}}">{{field | titlecase}}</label>
+      <input type="text" id="{{field}}" formControlName="{{field}}">
+      <div *ngIf="form.get(field)?.invalid &&  form.get(field)?.touched">
+        <span class="error_message"> Campo  obrigatório </span>
+    </div>
+    </div>
+    <button type="submit" [disabled]="form.invalid">Salvar</button>
+
+  </form>
+</main>

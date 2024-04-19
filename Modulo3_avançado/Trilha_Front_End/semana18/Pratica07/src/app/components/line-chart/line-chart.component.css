@@ -1,0 +1,9 @@
+#canva_wrapper, #canvas{
+    width: 100%;
+}
+
+#canvas{
+    background: #fff;
+    padding: 1rem;
+    border-radius: 10px;
+}

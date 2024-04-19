@@ -1,0 +1,30 @@
+/* You can add global styles to this file, and also import other style files */
+
+.conponent_title{
+    background-color: tomato;
+    color: white;
+
+    font-weight: 600;
+
+    padding: .5rem 1rem;
+    border-radius: 6px;
+    margin: 0;
+    border: none;
+}
+
+.itens_list{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    list-style: none;
+    row-gap: 2rem;
+    padding-left: 0;
+}
+
+.itens_list__item{
+    font-weight: 600;
+    padding: .5rem 1rem;
+    border-radius: 6px;
+    border: none;
+}

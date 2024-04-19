@@ -1,0 +1,21 @@
+
+h1,h3,ol,li{
+    text-align: center;
+}
+
+li[value = "3"] a{
+    color:red !important;
+    font-size: 14px;
+}
+li:nth-child(2) ,li:nth-child(2) a{
+    color:black !important;
+    font-size: 1.5rem;
+}
+li:nth-child(3) a{
+    color:green !important;
+    font-size: 1.5rem;
+}
+
+li:nth-child(3){
+    font-size: 1.5rem;
+}

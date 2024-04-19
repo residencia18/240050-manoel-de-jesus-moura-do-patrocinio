@@ -1,0 +1,13 @@
+<main class="main">
+
+    <h1> Todo List</h1>
+
+    <app-input-tarefa  (tarefaAdicionada)="addTodoOnArray($event)"/>
+    <app-container-tarefa [todos]="todoList"
+    
+    />
+</main>
+
+
+
+<router-outlet></router-outlet>

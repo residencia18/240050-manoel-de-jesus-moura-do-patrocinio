@@ -1,0 +1,58 @@
+.card-sessao-detail{
+  width: 25rem;
+
+  color: #242424;
+  text-align: left;
+
+  border: 1px solid #cecece;
+  border-radius: 5px;
+  padding: 1rem;
+  background-color: #fff;
+}
+h3{
+  width: 100%;
+  text-align: center;
+  font-size: 1.1rem;
+  color: var(--Color-purple);
+  margin-bottom: 1.2rem;
+}
+p:nth-child(3){
+  margin: 1rem 0 2rem 0;
+}
+
+.btn-option-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+}
+
+.btn-option-wrapper button, .btn-option-wrapper a{
+  width: max-content;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+
+  text-align: center;
+  color: var(--Color-purple);
+  font-size: 1rem;
+  
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-option-wrapper svg{
+  width: 1.5rem;
+  height: 1.5rem;
+  margin-bottom: .5rem;
+  
+}
+
+
+
+

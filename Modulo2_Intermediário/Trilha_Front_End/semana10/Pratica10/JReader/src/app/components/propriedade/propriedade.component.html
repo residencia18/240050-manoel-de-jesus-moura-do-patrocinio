@@ -1,0 +1,14 @@
+<div *ngIf=" veiculoProps != null">
+    <p class="conponent_title">{{veiculo?.Name}}</p>
+
+    <ul class="itens_list">
+        <li *ngFor = "let propriedade of veiculoProps" >
+            <button 
+                appVeiculos
+                class="itens_list__item "
+                (click)="selectProp(propriedade)"
+
+            >{{propriedade}}</button>
+        </li>
+    </ul>
+</div>

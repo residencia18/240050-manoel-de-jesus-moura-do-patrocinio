@@ -1,0 +1,32 @@
+/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    font-family: "Fredoka", sans-serif;
+    font-size: 1rem;
+    text-decoration: none;
+    list-style: none;
+}
+body{
+    background-color: #f9f9f9;
+    position: relative;
+}
+html {
+    position: relative;
+    scroll-behavior: smooth;
+}
+/* variaveis pra determinar a font */
+:root {
+    --font-primary: "Baloo Da 2", serif;
+    --font-secundary: "Josefin Slab", serif;
+    --font-action: "Muli", serif;
+    --Color-purple: #a044ff;
+    --Color-violet: #cb3bce;
+    --Color-dark: #17181b;
+    --Color-light-pink: #cc2b5e;
+    --Color-light-red: #f80759;
+}
+

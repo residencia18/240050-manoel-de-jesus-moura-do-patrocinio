@@ -1,0 +1,26 @@
+[
+    {
+      "id": "1",
+      "name": "Site Uesc",
+      "skills": "Angular | JavaScript | TypeScript",
+      "description": "Site da UNIVERSIDADE ESTADUAL DE SANTA CRUZ, desenvolvido durando um módulo de Fron-End, do Programa de Residência de Software, com a intenção de praticar conceitos do Angular como componentes e Consumo de APIs publicas.",
+      "link": "https://trilha-front-5uls59y3f-manoelpatrocinio.vercel.app/",
+      "image": "/assets/uesc.png"
+    },
+    {
+      "id": "2",
+      "name": "Wiki Search",
+      "skills": "Angular | JavaScript | TypeScript",
+      "description": "Site para busca de artigos mantidos e divulgados pela Wikipedia, desenvolvido durando um módulo de Fron-End, do Programa de Residência de Software, com a intenção de pratica conceitos do Angular como comunicação entre componentes, consumos de APIs e Services  ",
+      "link": "https://trilha-front-912gyzj5a-manoelpatrocinio.vercel.app/",
+      "image": "/assets/wikisearch.png"
+    },
+    {
+      "id": "3",
+      "name": "JReader",
+      "skills": "Angular | JavaScript | TypeScript",
+      "description": "Site para listagem de veículos, desenvolvido durando um módulo de Fron-End, do Programa de Residência de Software, com a intenção de pratica conceitos do Angular como comunicação entre componentes.",
+      "link": "https://trilha-front-pmk0cl99t-manoelpatrocinio.vercel.app/",
+      "image": "/assets/Jreader.png"
+    }
+  ]

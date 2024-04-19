@@ -1,0 +1,34 @@
+h3{
+    height: 20%;
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    color:#242424;
+}
+.projects-container{
+    width: 100%;
+    height: 80%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 1rem ;
+    row-gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.projects-container a {
+    background-color: var(--Color-purple);
+
+    color: #fff;
+    font-weight: 500;
+
+
+    padding: .5rem;
+    border-radius: .5rem;
+    transition: all .3s ease-in-out;
+}
+
+.projects-container a:hover{
+    box-shadow: 0 3px 10px  rgba(0,0,0,.4);
+
+    scale: 1.1;
+} 

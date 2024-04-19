@@ -1,0 +1,9 @@
+div{
+    min-width: max-content;
+    height: 10rem;
+    padding: .5rem 2rem;
+    background-color: #5f0688;
+    border-radius: 5px;
+    text-align: start;
+    color: white;
+}

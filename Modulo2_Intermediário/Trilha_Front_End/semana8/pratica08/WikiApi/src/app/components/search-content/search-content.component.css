@@ -1,0 +1,27 @@
+#container{
+   padding:  2rem; 
+   color: #fffff9;
+   text-shadow: 1px 1px 2px #fff3f399;
+}
+
+h2{
+    font-size: 2rem;
+    margin-bottom: 2rem;
+}
+
+#pagecontent a{
+    color: blueviolet;
+}
+
+p{
+    margin-top: 2rem;
+}
+p a{
+    background-color: #fffff9;
+    padding: .7rem 1rem;
+    border-radius: 5px;
+    text-decoration: none;
+
+    color: #242424;
+    font-weight: 600;
+}

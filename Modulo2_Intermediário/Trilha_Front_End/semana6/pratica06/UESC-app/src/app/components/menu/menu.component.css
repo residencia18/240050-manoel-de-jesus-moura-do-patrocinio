@@ -1,0 +1,16 @@
+
+#menu ul, #servicos ul{
+    padding-left: 10px;
+}
+#menu ul li, #servicos  ul li{
+    padding: .5rem 0;
+    list-style: none;
+    
+ 
+}
+#menu a{
+    color: #014A8E;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    font-style: normal;
+}

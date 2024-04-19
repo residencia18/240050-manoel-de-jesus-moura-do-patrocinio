@@ -1,0 +1,34 @@
+
+<form [formGroup]="exemploForm" (ngSubmit)="onSubmit()">
+    <h2>Login</h2>
+    <label for="email">email</label>
+    <input 
+        formControlName="email"
+        name="email"> <br>
+        <span *ngIf="!exemploForm.get('email')?.valid &&
+        exemploForm.get('email')?.touched" class="error">Min:3 Max:10 caracteres</span>
+        <br>
+    <label>Senha:</label>
+    <input 
+        formControlName="senha"
+    >
+    <span 
+    *ngIf="
+    !exemploForm.get('senha')?.valid &&
+    exemploForm.get('senha')?.touched" class="error">Min:3 Max:10 caracteres</span>
+    <span 
+    *ngIf="
+    exemploForm.get('senha')?.errors?.['invalidPassword']" class="error">Senha invalida</span>
+    <br>
+
+    <select name="status" formControlName="status">
+        <option value="valor1">Valor 1</option>
+        <option value="valor2" selected>Valor 2</option>
+        <option value="valor3">Valor 3</option>
+      </select>
+      <span 
+      *ngIf="
+      exemploForm.get('status')?.errors?.['invalidStatus']" class="error">status invalido</span>
+      <br>
+    <button type="submit">Enviar</button>
+ </form>   
