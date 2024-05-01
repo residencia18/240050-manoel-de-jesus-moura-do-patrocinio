@@ -1,0 +1,18 @@
+main{
+    text-align: center;
+    padding: 5% 10%;
+}
+h2{
+    font-size: 2rem;
+    color: #242424;
+    
+}
+
+.atend-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    padding: 5% ;
+}

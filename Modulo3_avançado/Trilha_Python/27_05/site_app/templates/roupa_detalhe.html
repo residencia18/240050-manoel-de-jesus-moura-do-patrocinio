@@ -1,0 +1,22 @@
+{% extends 'index.html' %}
+
+{% block content %}
+
+  <main class="w-100 d-flex flex-column align-items-center justify-content-center px-2 px-md-5 ">
+    <h2 class="text-black w-100 text-center fs-4 my-5">{{produto.prod_name}} </h2>
+    <div class="w-100 h-auto vh-md-100 vh-lg-100 d-flex flex-column flex-md-row justify-content-between align-items-start rounded p-3" >
+        <div class="w-100 w-md-50 h-100 mb-4 mb-md-0">
+          <img src={{produto.prod_imgUrl}} alt={{produto.prod_name}} class="w-100 h-100 rounded"/>
+        </div>
+        <div class="w-100 w-md-50 h-100  text-left">
+            <h3 class="fs-5 fw-medium mb-4 text-center text-md-start"> {{produto.prod_name}}</h3>
+            <p class="text-success text-center text-md-start fw-medium fs-4  mb-0 ">R$ {{produto.prod_price}}</p>
+            <span class="d-block text-black-50 w-100 text-center text-md-start">em até 12x sem juros</span>
+
+            <p class="fs-5 fw-medium mt-5 mb-3"> Descrição:</p>
+            <p class="w-100 mb-5"> {{produto.prod_description|linebreaksbr}} </p>
+            <button type="button" class="d-block btn btn-primary  text-white bg-success  fs-5 px-3 px-2 rounded mx-auto mx-md-0">COMPRAR</button>
+        </div>       
+    </div>
+  </main>
+{% endblock content%}

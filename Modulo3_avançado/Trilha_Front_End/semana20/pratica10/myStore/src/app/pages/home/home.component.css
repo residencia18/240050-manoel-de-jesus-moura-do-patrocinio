@@ -1,0 +1,19 @@
+.main_container{
+    width: 100%;
+    text-align: center;
+}
+.main_container h2{
+    font-size: 1.5rem;
+    color: var(--Color-purple);
+    margin: 2rem 0;
+}
+.products_container{
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: start;
+    flex-wrap: wrap;
+    gap: 2rem;
+
+    padding: 2%  5%;
+}

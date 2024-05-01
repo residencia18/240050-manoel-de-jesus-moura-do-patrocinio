@@ -1,0 +1,9 @@
+<app-banner-promotions/>
+
+<div class="main_container">
+    <h2>Produtos em Destaque</h2>
+    <div class="products_container">
+        <app-card-product *ngFor="let product of productlist" [product]="product" />
+          
+    </div>
+</div>

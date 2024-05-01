@@ -1,0 +1,15 @@
+{% extends 'index.html' %}
+
+{% block content %}
+  <main class="col-12 d-flex align-items-center justify-content-center py-3 px-2 py-md-5">
+    <form action="{% url 'registro_influencer' %}" method="post" class="col-12 col-md-6 col-lg-4 bg-white border p-4 rounded">
+      {% csrf_token %}
+      <h2 class="w-100 text-center fs-4 mb-1">Cadastre-se como influencer</h2>
+      <p class="w-100 text-center form-text mb-5">E ajude a divulgar o melhor da moda</p>
+
+      {{ form_influencer.as_p }}
+      
+      <button type="submit" class="btn d-block mx-auto text-white bg-black px-3 py2 mt-5">Cadastrar</button>
+    </form>
+  </main>
+{% endblock %}

@@ -1,0 +1,106 @@
+
+<form  [formGroup]="formAtendimento" (ngSubmit)="onSubmit(formAtendimento)">
+
+    <div class="row">
+        <div class="input-group">
+            <label for="user_fullName">Nome Completo</label>
+            <input type="text" formControlName="user_fullName" name="user_fullName" >
+            <div *ngIf="formAtendimento.get('user_fullName')?.errors?.['invalidFullName'] && formAtendimento.get('user_fullName')?.touched">
+                <span class="error_message"> Informe no mínimo nome e sobrenome</span>
+            </div>
+        </div>
+        <div class="input-group">
+            <label for="user_email">Sua Email</label>
+            <input type="email" formControlName="user_email" name="user_email" >
+            <div *ngIf="!formAtendimento.get('user_email')?.valid &&  formAtendimento.get('user_email')?.touched">
+                <span class="error_message"> Informe um e-mail válido</span>
+            </div>
+        </div>
+       
+    </div>
+    <div class="row">
+        <div class="input-group">
+            <label for="user_phone">Nº Celular</label>
+            <input type="text" formControlName="user_phone" name="user_phone" placeholder="(XX)XXXXX-XXXX">
+            <div *ngIf="!formAtendimento.get('user_phone')?.valid &&  formAtendimento.get('user_phone')?.touched">
+                <span class="error_message"> Formato (XX)XXXXX-XXXX</span>
+            </div>
+        </div>
+        <div class="input-group">
+            <label for="user_address">Endereço(Rua e Nº)</label>
+            <input type="text" formControlName="user_address" name="user_address">
+            <div *ngIf="!formAtendimento.get('user_address')?.valid && formAtendimento.get('user_address')?.errors?.['invalidFullName']  &&  formAtendimento.get('user_address')?.touched">
+                <span class="error_message">Informe um endereço válido </span>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+  
+        <div class="input-group">
+            <label for="atend_type_pet">Categoria do Pet</label>
+            <select name="atend_type_pet" formControlName="atend_type_pet">
+                <option value="Cachorro">Cachorro</option>
+                <option value="Gato">Gato</option>
+                <option value="Pássaro">Pássaro</option>
+                <option value="Reptil">Reptil</option>
+            </select>
+            <div *ngIf="formAtendimento.get('atend_type_pet')?.invalid &&  formAtendimento.get('atend_type_pet')?.touched">
+                <span class="error_message"> Campo obrigatório !</span>
+            </div>
+        </div>
+
+        <div class="input-group">
+            <label for="atend_name_pet">Nome do Pet</label>
+            <input type="text" formControlName="atend_name_pet" name="atend_name_pet">
+            
+            <div *ngIf="!formAtendimento.get('atend_name_pet')?.valid &&  formAtendimento.get('atend_name_pet')?.touched">
+                <span class="error_message"> Campo obrigatório !</span>
+            </div>
+        </div>
+        <div class="input-group">
+            <label for="atend_age_pet">Idade Pet</label>
+            <input type="number" formControlName="atend_age_pet" name="atend_age_pet">
+            
+            <div *ngIf="formAtendimento.get('atend_age_pet')?.invalid &&  formAtendimento.get('atend_age_pet')?.touched">
+                <span class="error_message"> Campo obrigatório !</span>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="input-group">
+            <label for="atend_date">Data do Atendimento</label>
+            <input type="date" formControlName="atend_date" name="atend_date">
+
+            <div *ngIf="formAtendimento.get('atend_date')?.invalid && formAtendimento.get('atend_date')?.touched">
+                <div *ngIf="formAtendimento.get('atend_date')?.errors?.['required']">
+                  <span class="error_message"> Campo obrigatório ! </span>
+                </div>
+              </div>
+        </div>
+        <div class="input-group">
+            <label for="atend_hour">Horário Atendimento</label>
+            <select name="atend_hour" formControlName="atend_hour">
+                <optgroup label="Matutino">
+
+                    <option value="09:00">09:00</option>
+                    <option value="10:00">10:00</option>
+                    <option value="12:00">12:00</option>
+                </optgroup>
+                <optgroup label="Vespertino">
+
+                    <option value="14:00">14:00</option>
+                    <option value="16:00">16:00</option>
+                    <option value="17:00">17:00</option>
+                </optgroup>
+            </select>
+            <div *ngIf="formAtendimento.get('atend_hour')?.invalid && formAtendimento.get('atend_hour')?.touched">
+                <div *ngIf="formAtendimento.get('atend_hour')?.errors?.['required']">
+                  <span class="error_message"> Campo obrigatório ! </span>
+                </div>
+              </div>
+        </div>
+    </div>
+
+    <button type="submit" >Salvar</button>
+</form>

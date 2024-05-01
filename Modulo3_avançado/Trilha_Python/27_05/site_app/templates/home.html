@@ -1,0 +1,76 @@
+{% extends 'index.html' %}
+
+{% block content %}
+
+  <main class="w-100 d-flex flex-column align-items-center justify-content-center px-2 px-md-5 bg-light">
+    <div class="w-100">
+        <img src="https://assets.troc.com.br/general-site/marketing/women-trocmesconsumidor-1803-header_15032024.jpg?d=1330x0"  class="img-fluid w-100 h-100" alt="">
+    </div>
+    <section class="w-100 text-center my-4">
+      <h2 class="w-100 text-center subtitle my-5">Destaques</h2>
+        
+      <div class="position-relative w-100 d-flex justify-content-between align-items-start flex-wrap px-3">
+        {% for produto in produtos %}
+          <div class="card flex-column justify-content-between" style="width: 18rem; min-height: 28rem;">
+            <div class="w-100" style="height: 70%;">
+              <img src={{produto.prod_imgUrl}} class="img-fluid w-100 h-100" alt="...">
+            </div>
+            <div class="card-body text-center" style="height: 30%;  ">
+              <h5 class="card-title fs-6 "> 
+                <a  href="{% url 'roupa_detalhe' produto.id %}" class="text-decoration-none text-black" >
+                  {{produto.prod_name }}
+                </a> 
+              </h5>
+              <p class="text-success fw-medium">R$ {{ produto.prod_price }}</p>
+              <button type="button" class="btn btn-success w-100">Adicinar</button>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    </section>
+
+  <div class="col-12  d-flex  flex-column flex-md-row  justify-content-center gap-2 mt-2">
+    <div class="col-12 col-md-6"> <img
+        src="https://assets.troc.com.br/general-site/marketing/women-trocmesconsumidor-1803-primeiracompra_15032024.png"
+        class=" w-100 h-100" alt=""></div>
+    <div class="col-12 col-md-6"><img
+        src="https://assets.troc.com.br/general-site/marketing/women-trocmesconsumidor-1803-influsdamodacircular_15032024.png"
+        class=" w-100 h-100" alt=""></div>
+  </div>
+  <section class="w-100 text-center my-4">
+    <h2 class="w-100 text-center subtitle my-5">Novidades</h2>
+    <div class="position-relative w-100 d-flex justify-content-between align-items-start flex-wrap px-3">
+      {% for produto in produtos %}
+      <div class="card flex-column justify-content-between" style="width: 18rem; min-height: 28rem;">
+        <div class="w-100" style="height: 70%;">
+          <a href="{% url 'roupa_detalhe' produto.id %}">
+
+            <img src={{produto.prod_imgUrl}} class="img-fluid w-100 h-100" alt="...">
+          </a>
+        </div>
+        <div class="card-body text-center" style="height: 30%;  ">
+          <h5 class="card-title fs-6 ">
+            <a href="{% url 'roupa_detalhe' produto.id %}" class="text-decoration-none text-black">
+              {{produto.prod_name }}
+            </a>
+          </h5>
+          <p class="text-success fw-medium">R$ {{ produto.prod_price }}</p>
+          <button type="button" class="btn btn-success w-100">Adicinar</button>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </section>
+  <h2 class="w-100 text-center subtitle my-5">OUTLET</h2>
+  <div class="w-100 d-flex justify-content-center align-items-center flex-wrap gap-2">
+    <img src="https://assets.troc.com.br/general-site/marketing/women-outlet-0512-calcadosschutzarezzo-1_13022024.png"
+      class="img-fluid " style="width: 48%;" alt="">
+    <img src="https://assets.troc.com.br/general-site/marketing/women-outlet-0512-bolsasschutzarezzo-1_13022024.png"
+      class="img-fluid " style="width: 48%;" alt="">
+    <img src="https://assets.troc.com.br/general-site/marketing/women-outlet-0512-reservago_05122023.png"
+      class="img-fluid " style="width: 48%;" alt="">
+    <img src="https://assets.troc.com.br/general-site/marketing/women-outlet-0512-birman_05122023.png"
+      class="img-fluid " style="width: 48%;" alt="">
+  </div>
+</main>
+{% endblock content%}
