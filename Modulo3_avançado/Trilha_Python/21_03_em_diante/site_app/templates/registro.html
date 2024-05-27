@@ -1,0 +1,49 @@
+{% extends 'index.html' %}
+
+{% block content %}
+  <main class="col-12 d-flex align-items-center justify-content-center py-3 px-2 py-md-5">
+    <form action="{% url 'registro' %}" method="post" class="col-12 col-md-6 col-lg-5 bg-white border p-4 rounded">
+      {% csrf_token %}
+      <h2 class="w-100 text-center fs-4 mb-1">Entrar</h2>
+      <p class="w-100 text-center form-text mb-5">Crie uma conta e aproveite o melhor da moda</p>
+
+      <div class="input-group d-flex flex-column align-items-start mb-3">
+        <label for="nome" class="form-label fw-medium">Nome</label>
+        {{ form_signUp.username }}
+      </div>
+      <div class="input-group d-flex flex-column align-items-start mb-3">
+        <label for="nome" class="form-label fw-medium">Sobre nome</label>
+        {{ form_signUp.last_name }}
+      </div>
+      <div class="row d-flex gap-1 justify-content-between">
+        <div class="col-6 d-flex flex-column align-items-start mb-3">
+          <label for="nome" class="form-label fw-medium">CPF</label>
+          {{ form_signUp.cpf }}
+        </div>
+        <div class="col-5 d-flex flex-column align-items-start mb-3">
+          <label for="nome" class="form-label fw-medium">Data de nascimento</label>
+          {{ form_signUp.dt_nascimento }}
+        </div>
+      </div>
+      <div class="input-group d-flex flex-column align-items-start mb-3">
+        <label for="nome" class="form-label fw-medium">E-mail</label>
+        {{ form_signUp.email }}
+      </div>
+      <div class="input-group d-flex flex-column align-items-start mb-3">
+        <label for="nome" class="form-label fw-medium">Sua senha</label>
+        {{ form_signUp.password }}
+      </div>
+      <div class="input-group d-flex flex-column align-items-start">
+        <label for="id_user_confirme_pascentersword">Confirme sua senha:</label>
+        <input type="password" class="w-100 form-control mt-2 rounded" id="id_user_confirme_password" name="id_user_confirme_password" placeholder="Repita a senha informada" required />
+      </div>
+      {% if form_signUp.errors %}
+        <p class="w-100 text-start text-danger">Formulário inválido. Verifique os campos e tente novamente.</p>
+      {% endif %}
+      <p class="w-100 text-center bg-gray-700 mb-5 fs-6 mt-3">
+        Já possui uma conta ? <a href="{% url 'login' %}">Clique aqui</a>
+      </p>
+      <button type="submit" class="btn d-block mx-auto text-white bg-black px-3 py2 mt-5">Cadastrar</button>
+    </form>
+  </main>
+{% endblock %}

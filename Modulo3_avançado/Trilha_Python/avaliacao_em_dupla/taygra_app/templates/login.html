@@ -1,0 +1,20 @@
+{% extends 'index.html' %}
+{% load static %}
+{% block content %}
+  <main class="w-100 row justify-content-center">
+    <form method="post" action="{% url 'login' %}" class="col-12 col-md-4 mt-5 border border-gray-900 rounded px-3 py-4">
+      {% csrf_token %}
+      <h2 class="w-100 text-center fs-4 mb-5">Login</h2>
+
+      {{ form_signIn.as_p }}
+      {% if form_signIn.errors %}
+        <p class="w-100 text-start text-danger">Email ou senha inválida. Tente novamente.</p>
+      {% endif %}
+      <p class="w-100 text-center bg-gray-700 mb-5 fs-6">
+        Ainda não tem uma conta ? <a href="{% url 'cadastro' %}">Clique aqui</a>
+      </p>
+      <button type="submit" class="btn d-block mx-auto mt-5" style="background-color: #88C661;">Cadastrar</button>
+    </form>
+  </main>
+ 
+{% endblock content %}

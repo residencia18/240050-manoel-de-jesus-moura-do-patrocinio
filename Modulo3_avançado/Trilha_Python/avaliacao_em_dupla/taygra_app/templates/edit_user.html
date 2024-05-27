@@ -1,0 +1,31 @@
+{% extends 'index.html' %}
+
+{% block content %}
+  <main class="col-12 d-flex align-items-center justify-content-center py-3 px-2 py-md-5">
+    <form action="{% url 'edit_perfil' %}" method="post" class="col-12 col-md-6 col-lg-4 bg-white border p-4 rounded">
+      {% csrf_token %}
+      <h2 class="w-100 text-center fs-4 mb-1">Edição</h2>
+      <p class="w-100 text-center form-text mb-5">Altere a informação desejado e ao final, clique em 'Atualizar'</p>
+ 
+      <div class="input-group d-flex flex-column align-items-start mb-3">
+        <label for="id_user_confirme_pascentersword">Nome de usuário: </label>
+        {{ formEdit.username}}
+      </div>
+      <div class="input-group d-flex flex-column align-items-start mb-3">
+        <label for="id_user_confirme_pascentersword">Seu sobrenome: </label>
+        {{ formEdit.last_name}}
+      </div>
+      <div class="input-group d-flex flex-column align-items-start mb-3">
+        <label for="id_user_confirme_pascentersword">E-mail: </label>
+        {{ formEdit.email}}
+      </div>
+      <div class="input-group d-flex flex-column align-items-start mb-4">
+        <label for="id_user_confirme_pascentersword">Senha: </label>
+        {{ formEdit.password}}
+      </div>
+      <a href='{% url 'deleteuser' user.id %}' type="button" class="w-100 text-center text-danger  py-2 link text-decoration-none"> Encerrar Conta </a>
+
+      <button type="submit" class="btn d-block mx-auto text-white  px-3 py2 mt-5" style="background-color: #88C661;">Atualizar</button>
+    </form>
+  </main>
+{% endblock %}

@@ -1,0 +1,19 @@
+{% extends 'index.html' %}
+
+{% block content %}
+  <main class="col-12 d-flex align-items-center justify-content-center py-3 px-2 py-md-5">
+    <form action="{% url 'addGroup' %}" method="POST" class="col-12 col-md-6 col-lg-4 bg-white border p-3 rounded">
+      {% csrf_token %}
+      <h2 class="w-100 text-center fs-4">Cadastro de grupo de usário</h2>
+      <p class="w-100 text-center form-text mb-5">Crie os grupo de usuário de acordo com sua necessidade</p>
+      
+
+      <div class="w-100 d-flex flex-column align-items-start mb-5">
+        <label for="nome" class="form-label fw-medium">Nome grupo</label>
+        {{ form_group.name }}
+      </div>
+
+      <button type="submit" class="d-block btn text-white mx-auto px-3 bg-black borde-none">Cadastrar</button>
+    </form>
+  </main>
+{% endblock %}
