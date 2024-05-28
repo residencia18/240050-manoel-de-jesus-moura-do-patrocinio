@@ -1,9 +1,14 @@
 import pytest
-import sys
-import os 
 
-sys.path.insert(0, os.path.abspath(os.path.dirname(__file__)))
 from atividade07_db import User, Database, UserService
+
+#  -------- ROTEIRO DE TESTE --------
+
+# Teste para a criação de um usuário válido.
+# Teste para a verificação da exceção ao tentar salvar um usuário sem nome ou email.
+# Teste para verificar se o método save_user do Database é chamado corretamente.
+
+
 
 class MockDatabase(Database):
     def __init__(self):
