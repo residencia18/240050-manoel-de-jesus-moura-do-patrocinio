@@ -1,0 +1,4 @@
+python/atividades/test_*
+python/__pycache__/
+python/atividade/__pycache__/
+*.pyc
