@@ -1,0 +1,73 @@
+<main>
+
+  <form [formGroup]="productForm" (ngSubmit)="onSubmit(productForm)">
+    <div *ngIf="formDataToEdit == null">
+
+      <h2>Cadastro de Produto</h2>
+      <p>Preencha todos os campos para cadastrar um produto na plataforma</p>
+    </div>
+
+    <div *ngIf="formDataToEdit != null">
+
+      <h2>Edição de Produto</h2>
+      <p>Altere o campos desejado ao final, clique em 'Atualizar'</p>
+    </div>
+
+    <div class="row1 mt-5">
+      <div class="input-group">
+        <label for="nameProduct">Nome</label>
+        <input type="text" formControlName="nome" name="nameProduct">
+        <div *ngIf="productForm.get('nome')?.invalid &&  productForm.get('nome')?.touched">
+          <span class="error_message"> Compo Obrigatório</span>
+        </div>
+      </div>
+
+      <div class="input-group">
+        <label for="capa">Imagem url</label>
+        <input type="text" formControlName="capa" name="capa">
+        <div *ngIf="productForm.get('capa')?.invalid &&  productForm.get('capa')?.touched">
+          <span class="error_message"> Compo Obrigatório</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="row1 mt-3">
+      <div class="input-group">
+        <label for="preco">Preço</label>
+        <input type="number" formControlName="preco" name="nameProduct">
+        <div *ngIf="productForm.get('preco')?.invalid &&  productForm.get('preco')?.touched">
+          <span class="error_message"> Compo Obrigatório</span>
+        </div>
+      </div>
+
+      <div class="input-group">
+        <label for="avaliacoes">Avaliação</label>
+        <input type="number" formControlName="avaliacoes" name="avaliacoes" min="1" max="5">
+        <div *ngIf="productForm.get('avaliacoes')?.invalid &&  productForm.get('avaliacoes')?.touched">
+          <span class="error_message"> Compo Obrigatório</span>
+        </div>
+      </div>
+
+      <div class="input-group">
+        <label for="marca">Marca</label>
+        <input type="text" formControlName="marca" name="marca" placeholder="Ex: Premier, Pedigree, Dog chow">
+        <div *ngIf="productForm.get('marca')?.invalid &&  productForm.get('marca')?.touched">
+          <span class="error_message"> Compo Obrigatório</span>
+        </div>
+      </div>
+   
+    </div>
+    <div class="row1 mt-3">
+      <div class="w-100 input-group">
+        <label for="marca">Descrição</label>
+        <textarea class="w-100 p-2 rounded" row="5" type="text" formControlName="descricao" name="descricao" placeholder="Informe os detalhes do produtos para seus compradores" ></textarea>
+        <div *ngIf="productForm.get('descricao')?.invalid &&  productForm.get('descricao')?.touched">
+          <span class="error_message"> Compo Obrigatório</span>
+        </div>
+      </div>
+    </div>
+
+    <button type="submit" >{{formDataToEdit == null ? "Cadastrar" : "Atualizar"}}</button>
+  </form>
+
+</main>

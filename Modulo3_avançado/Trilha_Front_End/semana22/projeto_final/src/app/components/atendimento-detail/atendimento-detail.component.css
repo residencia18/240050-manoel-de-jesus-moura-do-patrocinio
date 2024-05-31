@@ -1,0 +1,60 @@
+.div-collapse{
+    width: 40rem;
+}
+
+.description{
+    padding: .5rem 1rem;
+}
+.title{
+    background-color: #a244ffbd;
+    color: #f9f9f9;
+    padding: 1rem;
+    text-align: left;
+    font-weight: 500;
+    border-radius: 5px;
+
+}
+#pet-info,#owner-info{
+    margin-bottom: 1rem;
+    text-align: left;
+
+}
+strong{
+    color: #242424;
+}
+p{
+    color: var(--Color-dark);
+    margin: .3rem 0;
+}
+
+.btn-option-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+}
+
+.btn-option-wrapper button, .btn-option-wrapper a{
+    width: max-content;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  
+
+    text-align: center;
+    color: var(--Color-purple);
+    font-size: 1rem;
+    
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-option-wrapper svg{
+    width: 2rem;
+    height: 2rem;
+    margin-bottom: .5rem;
+}

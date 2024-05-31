@@ -1,0 +1,24 @@
+<app-carousel />
+
+<main class="w-100 py-5">
+  <div class="row w-100 justify-content-center align-items-end ">
+    <div class="col-3 mb-2" style="height: 1.5px; background-color: #a044ff;"></div>
+    <h2 class=" text-center mx-3 mb-0" style="width: fit-content;">Destaques</h2>
+    <div class="col-3 mb-2" style="height: 1.5px; background-color: #a044ff;"></div>
+  </div>
+  <div class="w-100 d-flex justify-content-evenly items-content-center flex-wrap mt-5  row-gap-3">
+    <app-card-product *ngFor="let product of productlist" [product]="product" />
+  </div>
+  <section class="mt-5">
+    <div class="row w-100 justify-content-center align-items-end ">
+      <div class="col-3 mb-2" style="height: 1.5px; background-color: #a044ff;"></div>
+      <h2 class=" text-center mx-3 mb-0" style="width: fit-content;">Novidades</h2>
+      <div class="col-3 mb-2" style="height: 1.5px; background-color: #a044ff;"></div>
+    </div>
+    <div class="w-100 d-flex justify-content-evenly items-content-center flex-wrap mt-5  row-gap-3">
+      <app-card-product *ngFor="let product of productlist" [product]="product" />
+    </div>
+
+    
+  </section>
+</main>

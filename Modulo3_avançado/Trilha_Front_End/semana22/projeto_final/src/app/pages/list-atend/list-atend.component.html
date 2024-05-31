@@ -1,0 +1,14 @@
+<main>
+    <h2>Atendimentos Pendentes</h2>
+
+    <div  class="atend-container" *ngIf="atendimentos != null">
+        <app-atendimento-detail [atendimento]="atendimento"  *ngFor="let atendimento of atendimentos"/>
+    </div>
+
+    <div  class="atend-container" *ngIf="atendimentos == null">
+        <p class="w-100 text-center text-black fs-3"> Sem agendamentos por enquanto</p>
+    </div>
+
+    
+</main>
+

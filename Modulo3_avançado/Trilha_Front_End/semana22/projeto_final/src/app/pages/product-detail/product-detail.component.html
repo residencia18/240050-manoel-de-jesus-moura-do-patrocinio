@@ -1,0 +1,16 @@
+<br>
+<div class="detalhes-do-produto">
+    <div class="imagem-do-produto">
+      <img [src]="product?.capa" alt="{{ product?.nome }}">
+    </div>
+    <div class="informacoes-do-produto">
+      <h2>{{ product?.nome }}</h2>
+      <p class="descricao-do-produto">{{ product?.descricao }}</p>
+      <p class="preco-do-produto">R$ {{ product?.preco }},00 </p>
+  
+      <div class="acoes-do-produto">
+        <button class="botao-adicionar-carrinho">Adicionar ao Carrinho</button>
+      </div>
+    </div>
+  </div>
+  

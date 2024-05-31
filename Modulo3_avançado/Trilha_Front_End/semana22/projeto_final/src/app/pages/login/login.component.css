@@ -1,0 +1,105 @@
+main{
+    text-align: center;
+    padding: 2% 20%;
+}
+h2{
+    font-size: 2rem;
+    color: #242424;
+    
+}
+
+ p{
+    font-size: 1.1rem;
+    color: #3b3b3b;
+    margin-bottom: 2rem;
+}
+
+
+
+form{
+    width: 60%;
+    margin: 0 auto;
+    padding: 5%;
+    background-color: #fff;
+    border-radius: .8rem;
+    box-shadow: 0 3px 10px  rgba(0,0,0,.4);
+    text-align: center;
+    
+}
+
+
+
+.row{
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 2rem;
+}
+.input-group{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: flex-start;
+    margin-bottom: 1.2rem;
+
+}
+
+.input-group label{
+    color: #504e4e;
+    margin-bottom: .5rem ;
+}
+
+
+.input-group input, .input-group select{
+    width: 100%;
+    color: #242424;
+    padding: .5rem;
+
+    border: 1px solid #cecece;
+    border-radius: 5px;
+}
+
+a{
+    display: block;
+    text-align: left;
+    width: 100%;
+    color: #242424;
+    text-decoration: none;
+}
+a span{
+    color: var(--Color-purple);
+}
+
+button{
+    background-color: var(--Color-purple);
+    color: #fff;
+    padding: .5rem 1rem;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    transition: all .5s ease-in-out;
+    margin-top: 2rem;
+}
+
+button:hover{
+    background-color: var(--Color-violet);
+
+}
+button:disabled{
+    background-color: #7c7878 !important;
+
+}
+
+.error_message{
+    color: #bd2828;
+}
+
+
+@media(max-width:768px){
+    main{
+        text-align: center;
+        padding: 2% 5%;
+    }
+}

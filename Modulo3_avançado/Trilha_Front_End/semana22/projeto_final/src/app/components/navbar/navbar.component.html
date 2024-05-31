@@ -1,0 +1,43 @@
+
+<nav class="navbar  nav-principal navbar-expand-lg px-2 px-md-5 " data-bs-theme="dark">
+  <div class="container-fluid d-flex justify-content-between">
+    <a class="navbar-brand logo" href="#">Pet Store</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse flex-grow-0 position-relativa" id="navbarSupportedContent" style="width: max-content;">
+      <ul class="navbar-nav items-menu ">
+        <li class="nav-item">
+          <!-- <a class="nav-link active" aria-current="page" href="#">Home</a> -->
+          <a routerLink="/" aria-current="page">Início</a>
+        </li>
+        <li id="lk-menu-drop">Atendimentos
+          <ul id="menu-drop">
+            <li><a routerLink="resgister-atend"> Cadastro </a></li>
+            <li><a routerLink="list-atend"> Listagem </a></li>
+          </ul>
+        </li>
+        <li id="lk-menu-drop" *ngIf="isAuthenticated">Minha Conta
+          <ul id="menu-drop">
+              <li> <a *ngIf="isAuthenticated" routerLink="/painel">Painel</a></li>
+              <li> <a *ngIf="isAuthenticated" (click)="logout()">Logout</a></li>
+          </ul>
+        </li>
+        
+        <li> <a *ngIf="!isAuthenticated" routerLink="login">Entrar/Criar</a></li>
+        <li>
+          <button class="btn bg-transparent p-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
+            aria-controls="offcanvasRight">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M17 22C17.55 22 18.0207 21.8043 18.412 21.413C18.8033 21.0217 18.9993 20.5507 19 20C19.0007 19.4493 18.8047 18.9787 18.412 18.588C18.0193 18.1973 17.5487 18.0013 17 18C16.4513 17.9987 15.9803 18.1947 15.587 18.588C15.1937 18.9813 14.998 19.452 15 20C15.002 20.548 15.1977 21.019 15.587 21.413C15.9763 21.807 16.4473 22.0027 17 22ZM7 22C7.55 22 8.02067 21.8043 8.412 21.413C8.80333 21.0217 8.99933 20.5507 9 20C9.00067 19.4493 8.80467 18.9787 8.412 18.588C8.01933 18.1973 7.54867 18.0013 7 18C6.45133 17.9987 5.98033 18.1947 5.587 18.588C5.19367 18.9813 4.998 19.452 5 20C5.002 20.548 5.19767 21.019 5.587 21.413C5.97633 21.807 6.44733 22.0027 7 22ZM18.8 4H4.05C3.66667 4 3.375 4.171 3.175 4.513C2.975 4.855 2.96667 5.20067 3.15 5.55L6.7 11.95C6.88333 12.2833 7.129 12.5417 7.437 12.725C7.745 12.9083 8.08267 13 8.45 13H15.9L17 15H5V17H17C17.75 17 18.3167 16.671 18.7 16.013C19.0833 15.355 19.1 14.7007 18.75 14.05L17.4 11.6L21 4H23V2H19.75L18.8 4Z"
+                fill="#F8F8F8" />
+            </svg>
+    
+          </button>
+        </li>
+      </ul>
+     
+    </div>
+  </div>
+</nav>

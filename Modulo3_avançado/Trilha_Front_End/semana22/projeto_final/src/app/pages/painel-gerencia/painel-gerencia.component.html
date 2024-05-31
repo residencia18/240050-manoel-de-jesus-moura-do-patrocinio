@@ -1,0 +1,66 @@
+<main class="w-100 ">
+  <h2 class="w-100 text-center my-5">Painel de gerenciamento de produtos</h2>
+
+  <div class="w-100 d-flex justify-content-center mb-5">
+    <a href="/register-product" class="d-flex gap-2 justify-content-center align-items-center " style="color: var(--Color-purple);">
+
+        <svg width="36" height="36" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M4 24C4 12.954 12.954 4 24 4C35.046 4 44 12.954 44 24C44 35.046 35.046 44 24 44C12.954 44 4 35.046 4 24ZM24 8C19.7565 8 15.6869 9.68571 12.6863 12.6863C9.68571 15.6869 8 19.7565 8 24C8 28.2435 9.68571 32.3131 12.6863 35.3137C15.6869 38.3143 19.7565 40 24 40C28.2435 40 32.3131 38.3143 35.3137 35.3137C38.3143 32.3131 40 28.2435 40 24C40 19.7565 38.3143 15.6869 35.3137 12.6863C32.3131 9.68571 28.2435 8 24 8Z" fill="#9747FF"/>
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M26 14C26 13.4696 25.7893 12.9609 25.4142 12.5858C25.0391 12.2107 24.5304 12 24 12C23.4696 12 22.9609 12.2107 22.5858 12.5858C22.2107 12.9609 22 13.4696 22 14V22H14C13.4696 22 12.9609 22.2107 12.5858 22.5858C12.2107 22.9609 12 23.4696 12 24C12 24.5304 12.2107 25.0391 12.5858 25.4142C12.9609 25.7893 13.4696 26 14 26H22V34C22 34.5304 22.2107 35.0391 22.5858 35.4142C22.9609 35.7893 23.4696 36 24 36C24.5304 36 25.0391 35.7893 25.4142 35.4142C25.7893 35.0391 26 34.5304 26 34V26H34C34.5304 26 35.0391 25.7893 35.4142 25.4142C35.7893 25.0391 36 24.5304 36 24C36 23.4696 35.7893 22.9609 35.4142 22.5858C35.0391 22.2107 34.5304 22 34 22H26V14Z" fill="#9747FF"/>
+        </svg>
+        Add Produto
+    </a>
+        
+  </div>
+  <div class="w-100 d-flex justify-content-evenly align-items-start flex-wrap row-gap-3" style="min-height: 60vh;">
+    <details class="div-collapse shadow" *ngFor="let produto of productlist">
+      <summary class="title">{{produto.nome}} </summary>
+      <div class="description border rounded">
+          <div id="prod-info">
+              <img src="{{produto.capa}}" alt="" style="width: 10rem; height: 8rem;">
+              <p><strong>Marca:</strong> {{produto?.marca}}</p>
+              <p> <strong> Preço:</strong> {{produto?.preco}}</p>
+              <p> <strong> Estrelas:</strong> {{produto?.avaliacoes}}</p>
+          </div>
+        
+          <div class="btn-option-wrapper">
+              <!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools -->
+  
+              <button type="button"(click)="deleteProduct(produto?._id!)" >
+                  <svg width="800px" height="800px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M4 7H20" stroke="#a044ff" stroke-width="2" stroke-linecap="round"
+                          stroke-linejoin="round" />
+                      <path d="M6 7V18C6 19.6569 7.34315 21 9 21H15C16.6569 21 18 19.6569 18 18V7" stroke="#a044ff"
+                          stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                      <path d="M9 5C9 3.89543 9.89543 3 11 3H13C14.1046 3 15 3.89543 15 5V7H9V5Z" stroke="#a044ff"
+                          stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                  </svg>
+                  Excluir
+              </button>
+              <a  routerLink="/edit-product/{{produto?._id}}">
+                  <svg fill="#a044ff" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg"
+                      xmlns:xlink="http://www.w3.org/1999/xlink" width="800px" height="800px"
+                      viewBox="0 0 494.936 494.936" xml:space="preserve">
+                      <g>
+                          <g>
+                              <path d="M389.844,182.85c-6.743,0-12.21,5.467-12.21,12.21v222.968c0,23.562-19.174,42.735-42.736,42.735H67.157
+        c-23.562,0-42.736-19.174-42.736-42.735V150.285c0-23.562,19.174-42.735,42.736-42.735h267.741c6.743,0,12.21-5.467,12.21-12.21
+        s-5.467-12.21-12.21-12.21H67.157C30.126,83.13,0,113.255,0,150.285v267.743c0,37.029,30.126,67.155,67.157,67.155h267.741
+        c37.03,0,67.156-30.126,67.156-67.155V195.061C402.054,188.318,396.587,182.85,389.844,182.85z" />
+                              <path d="M483.876,20.791c-14.72-14.72-38.669-14.714-53.377,0L221.352,229.944c-0.28,0.28-3.434,3.559-4.251,5.396l-28.963,65.069
+        c-2.057,4.619-1.056,10.027,2.521,13.6c2.337,2.336,5.461,3.576,8.639,3.576c1.675,0,3.362-0.346,4.96-1.057l65.07-28.963
+        c1.83-0.815,5.114-3.97,5.396-4.25L483.876,74.169c7.131-7.131,11.06-16.61,11.06-26.692
+        C494.936,37.396,491.007,27.915,483.876,20.791z M466.61,56.897L257.457,266.05c-0.035,0.036-0.055,0.078-0.089,0.107
+        l-33.989,15.131L238.51,247.3c0.03-0.036,0.071-0.055,0.107-0.09L447.765,38.058c5.038-5.039,13.819-5.033,18.846,0.005
+        c2.518,2.51,3.905,5.855,3.905,9.414C470.516,51.036,469.127,54.38,466.61,56.897z" />
+                          </g>
+                      </g>
+                  </svg>
+                  Editar
+              </a>
+  
+          </div>
+      </div>
+  </details>
+  </div>
+</main>

@@ -1,0 +1,26 @@
+<main>
+   
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit(loginForm)">
+        <h2>Login </h2>
+        <p>Entre e aproveite o mundo de oportunidades para seu pet</p>
+    
+        <div class="input-group">
+            <label for="user_email">Sua Email</label>
+            <input type="email" formControlName="user_email" name="user_email">
+            <div *ngIf="!loginForm.get('user_email')?.valid &&  loginForm.get('user_email')?.touched">
+                <span class="error_message"> Informe um e-mail válido</span>
+            </div>
+        </div>
+        <div class="input-group">
+            <label for="user_password">Sua Senha</label>
+            <input type="password" formControlName="user_password" name="user_password">
+            <div *ngIf="!loginForm.get('user_password')?.valid &&  loginForm.get('user_password')?.touched">
+                <span class="error_message"> Mínimo de 4 caracteres, deve incluir pelo
+                    menos uma letra maiúscula e um símbolo</span>
+            </div>
+        </div>
+        <a routerLink="/register">Ainda não tem uma conta ? <span>clique aqui</span></a>
+        <button type="submit" [disabled]="loginForm.invalid">Entrar</button>
+
+    </form>
+</main>

@@ -1,0 +1,8 @@
+<div class="card">
+    <a routerLink="/product/{{product?._id}}" class="card__img_wrapper">
+        <img src="{{product?.capa}}" alt="">
+    </a>
+    <a routerLink="/product/{{product?._id}}" class="card__title">{{product?.nome}}</a>
+    <span class="card__price">R$ {{product?.preco}}</span>
+    <button class="card__btnAdd"(click)="adicionarItem(product!)">Adicionar</button>
+</div>
