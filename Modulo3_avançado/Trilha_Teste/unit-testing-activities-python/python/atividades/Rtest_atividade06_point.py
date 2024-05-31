@@ -6,6 +6,12 @@ from math import isclose
 sys.path.insert(0, os.path.abspath(os.path.dirname(__file__)))
 from atividade06_point import Point  
 
+
+#  -------- ROTEIRO DE TESTE --------
+
+# Verificar se a distância entre dois pontos é calculada corretamente.
+# Verificar se a exceção é levantada quando o argumento não é uma instância de Point.
+
 def test_distance_to():
     # Teste para a distância entre dois pontos
     p1 = Point(0, 0)
