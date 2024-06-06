@@ -1,3 +1,7 @@
+"""
+AWS Docs and Code example:
+https://docs.aws.amazon.com/rekognition/latest/dg/text-detecting-text-procedure.html
+"""
 import boto3
 
 def detect_text_resource(image_path: str):
